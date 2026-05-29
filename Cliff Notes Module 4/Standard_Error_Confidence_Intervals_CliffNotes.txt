@@ -1,0 +1,40 @@
+STANDARD ERROR OF THE MEAN AND CONFIDENCE INTERVALS — CLIFF NOTES
+Module 4
+
+PURPOSE
+These tools answer: how confident are we that a small sample's average reflects the true population mean? They quantify uncertainty on the mean itself.
+
+STANDARD ERROR OF THE MEAN (SEM)
+Definition: the standard deviation of the sample mean — i.e., the spread you'd see across the means of infinitely many samples of size n drawn from the same population.
+
+We can't actually resample infinitely, so use the formula:
+    SEM = s / sqrt(n)
+where s = the sample's standard deviation, n = number of items in the sample.
+
+Key distinction:
+- Sample SD describes the spread of the individual data points within one sample.
+- SEM describes the spread of the mean, as if the sampling were repeated many times. SEM is always smaller than SD (divided by sqrt(n)).
+
+CONFIDENCE INTERVAL (CI)
+A range in which we expect the true mean to fall. This is the "margin of error" reported in polls/elections.
+
+By the Central Limit Theorem the sampling distribution of the mean is normal, so for a 95% CI:
+    CI = (x_bar - 2*SEM, x_bar + 2*SEM)
+Interpretation: ~95% chance the true population mean lies within this interval. (The "2" is the ~2-sigma rule for 95% under a Gaussian.)
+
+CODE NOTES
+- Reuse my_average, my_variance, my_standard_deviation from prior notebook.
+- SEM = my_standard_deviation(sample) / sqrt(len(sample))   # sqrt via ** 0.5
+- CI as a tuple: (mean - 2*SEM, mean + 2*SEM)
+
+WORKED EXAMPLE (uniform distribution, true mean = 0.5)
+- n = 5:  sample mean ~0.39, SEM ~0.13, 95% CI roughly (0.1, 0.7).
+  Very wide -> low confidence. The sample of five doesn't pin down the true mean.
+- n = 1000: sample mean ~0.51, sample SD ~0.29, SEM ~0.009, 95% CI ~(0.49, 0.53).
+  Tight -> high confidence, close to the true 0.5.
+
+KEY TAKEAWAYS
+- Sample size drives everything: larger n -> smaller SEM -> narrower CI -> more confidence. The 1/sqrt(n) term means quadrupling n halves the SEM.
+- SEM is the SD of the mean, NOT the SD of the data points.
+- A 95% CI ≈ sample mean ± 2*SEM.
+- The real-world point: you rarely have as much data as you want, so being able to communicate uncertainty around an estimate matters.

@@ -1,0 +1,73 @@
+Course Introduction — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Instructor: Professor Michael Miller-Yoder
+Source: Course Introduction lecture transcript
+
+================================================================
+1. WHAT THIS COURSE DELIVERS
+================================================================
+Three skill areas:
+  - Programming for data analysis in Python
+  - Data visualization through programming
+  - Making predictions from patterns in data
+
+Framed not as a skill checklist but as a mindset: a practice of
+interacting with the computer and with data through programming.
+These are foundational for the entire MDS program.
+
+================================================================
+2. WHY THE FIELD MATTERS (THE MOTIVATING CLAIM)
+================================================================
+Definition surfaced here: data = structured observations about the
+world. It is being collected everywhere — urban traffic patterns,
+ad clicks, music composition, healthcare outcomes, etc.
+
+Demand drivers: companies, organizations, governments, and research
+groups want to use this data to operate more efficiently, save
+money, optimize processes, help more people, or sell more product.
+They need people who can organize, manipulate, find patterns in,
+and make predictions from data.
+
+================================================================
+3. THE PIPELINE FRAMING (PREVIEW)
+================================================================
+The program's stated arc: a pipeline that starts with data and ends
+with making that data useful for somebody. Covered in detail in the
+Data Science Pipeline lecture.
+
+Important nuance: it's not just methods. It's also
+  - understanding the assumptions behind the data
+  - asking the right questions about it
+  - knowing the context in which the data was created
+  - recognizing what's present AND what's missing
+…so the analysis can actually serve the end goal.
+
+================================================================
+4. INSTRUCTOR BACKGROUND (LIGHT CONTEXT)
+================================================================
+Miller-Yoder: undergrad in CS. First encountered data science tools
+(including Jupyter Notebooks — which this course uses) in a
+psychology research lab, writing Python to store brain images for
+neural activation studies. Later applied the same toolkit to text
+and online community language in grad school.
+
+Takeaway worth noting: the same data science toolkit transfers
+across wildly different domains.
+
+================================================================
+5. EXPECTATIONS FOR STUDENTS
+================================================================
+The course starts from scratch — no programming background
+required. Mix of backgrounds expected.
+
+  - Prior experience: early modules will move fast
+  - No experience: front-load time on early modules, keep Python
+    intro material handy as reference, ask questions
+
+================================================================
+6. KEY TERMS INTRODUCED
+================================================================
+  - Data: structured observations about the world
+  - Data science pipeline: the multi-stage process from question
+    to communicated insight
+  - Jupyter Notebooks: the primary tool environment for this course

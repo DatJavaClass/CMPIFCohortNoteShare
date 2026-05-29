@@ -1,0 +1,123 @@
+What are Data and Data Science? — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: What are Data and Data Science? lecture transcript
+
+================================================================
+1. WHAT IS DATA
+================================================================
+Definition: Data is STRUCTURED INFORMATION ABOUT THE WORLD.
+Includes any observations or recorded measurements; can be numeric
+input or derived from text, images, or audio (those non-numeric
+inputs typically get processed into structured form first).
+
+CRITICAL CAVEAT — data is not "raw truth":
+  - Somebody (or some sensor designed by somebody) does the
+    observing/measuring
+  - Therefore data can be imperfect and subjective
+  - Always preserve awareness of the human/instrumentation layer
+
+================================================================
+2. THE STRUCTURE OF DATA
+================================================================
+Standard format: a series of observations.
+Observations have many names — data points, instances — used
+interchangeably.
+
+Each observation = a set of ATTRIBUTES, each with a VALUE.
+
+Tabular representation (think spreadsheet):
+  - Each ROW = one data point / observation
+  - Each COLUMN = one attribute
+  - Each CELL = the value of that attribute for that observation
+
+Worked example (the Parthenon):
+  - Attribute: name of building       → Value: Parthenon
+  - Attribute: material               → Value: Marble
+  - Attribute: year built             → Value: 438 BCE
+
+CRITICAL: even simple attributes carry context questions.
+"Year built" — does that mean year construction STARTED or
+FINISHED? How accurate are estimates for ancient ruins? Always
+interrogate what attributes actually mean.
+
+================================================================
+3. WHAT IS DATA SCIENCE
+================================================================
+Definition: Collecting, processing, and manipulating data with
+TWO GOALS:
+
+  GOAL A — DERIVING INSIGHT
+    Finding patterns and relationships AMONG ATTRIBUTES
+    (i.e., between the columns of the table).
+    Example: across a data set of ancient buildings, what materials
+    were used in which time periods? Add a location column and you
+    can also relate region × era × material.
+
+  GOAL B — MAKING PREDICTIONS
+    Predicting attribute values for data points we HAVEN'T YET
+    observed.
+    Example: a newly discovered ruin — given its material and
+    location, predict the year it was likely built using patterns
+    learned from known ruins.
+
+Together: data science is column-pattern-finding (insight) and
+extrapolation to unseen rows (prediction).
+
+================================================================
+4. ADJACENT FIELDS — HOW THEY RELATE
+================================================================
+
+ARTIFICIAL INTELLIGENCE
+  Systems capable of "intelligent" tasks (generating language,
+  generating images, etc.). Uses prediction-from-data heavily,
+  but the GOAL differs: AI builds systems to accomplish tasks,
+  whereas data science derives insight or makes predictions from
+  a data set as the end product.
+
+MACHINE LEARNING
+  Learning patterns from data to make predictions or perform
+  tasks. More COMPUTATIONAL than data science.
+    - You won't build self-driving cars or ChatGPT in this class
+    - But the FUNDAMENTAL TECHNIQUES — learning patterns from
+      data, using them for prediction — are shared
+  ML examples cited: steering-wheel angle for autonomous vehicles,
+  next-word prediction in large language models.
+
+STATISTICS
+  Probably the CLOSEST field to data science.
+    - Inferring structure and patterns from data
+    - Stats is used inside data science (pattern identification,
+      significance testing)
+    - But stats tends to be more abstract / less applied
+    - Less interested in data cleaning, organization,
+      computation than data science is
+  Some statisticians argue data science is just rebranded
+  statistics — and universities sometimes rename stats departments
+  to incorporate "data science" for marketing reasons. There's
+  some truth to the rebranding claim.
+
+DATABASE MANAGEMENT / ENGINEERING
+  Concerned with organizing and storing data. Data science
+  borrows from this but doesn't go as deep into hardware or
+  storage architecture.
+
+  Mental model: Data Science sits at the intersection — it
+  combines the data-organization elements of database work with
+  the computational/predictive elements of machine learning.
+
+================================================================
+HIGH-VALUE TAKEAWAYS
+================================================================
+  - Be able to define data ("structured information about the
+    world") and data science (collect/process/manipulate data
+    to derive insight + make predictions).
+  - Know the table structure: row = observation, column =
+    attribute, cell = value.
+  - Memorize the two goals of data science (insight via
+    relationships between attributes; prediction for unseen
+    observations).
+  - Be ready to distinguish data science from AI, ML, statistics,
+    and database management — and explain how each overlaps
+    and differs.
+  - Always treat data as having a human/instrumentation provenance:
+    measurements can be imperfect and subjective.

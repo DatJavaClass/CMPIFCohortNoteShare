@@ -1,0 +1,107 @@
+The Processes of Programming — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: The Processes of Programming
+
+================================================================
+FRAMING
+================================================================
+Much of this course is about producing some OUTPUT via a program
+written in Python. It's a creative, problem-solving process.
+
+Reminders carried over from the mindset lecture:
+  - No single "best way." Some ways are better than others, but
+    don't worry about that early on.
+  - Early goal: just get something that WORKS.
+  - The process can be frustrating — having a defined set of
+    steps helps manage that.
+
+================================================================
+THE PROGRAMMING PROCESS — STEP BY STEP
+================================================================
+
+STEP 1 — DESIGN THE PROGRAM (don't jump straight to code)
+  You can play with code a little, but it's better to step back
+  and plan first.
+
+  (a) Think about INPUT and OUTPUT before anything else.
+      A program typically takes some input, manipulates it /
+      saves something / works with variables and objects, and
+      produces an output.
+
+  (b) Come up with EXAMPLES: for a given example input, what
+      should the output be? Write it down.
+
+  (c) BREAK THE PROBLEM INTO STEPS — this is essential. It makes
+      an intimidating problem manageable.
+      Key insight for when you feel stuck: you probably already
+      know how to do at least step one, and maybe the last step
+      (right before output). Start from what you know.
+      Example — building a list:
+        - First step: initialize the list (create the variable)
+        - Last step: add items to it, e.g. with append()
+
+  (d) Write PSEUDOCODE: plain-language instructions describing
+      what each step of the program will do.
+
+STEP 2 — WRITE THE CODE
+  Translate each planned step into actual code. This gets easier
+  with familiarity ("I've done that before, I just need this
+  function" / "I can look that up").
+
+  CENTRAL TRUTH OF PROGRAMMING:
+  Almost all programmers work by ADAPTING EXAMPLES. You'll rarely
+  (if ever) find an exact match for what you need — adapting it
+  is itself a core programming skill.
+    - For this class, your primary examples to adapt come from
+      the COURSE MATERIAL. Homeworks are largely adaptations of it.
+    - (Instructor's personal habit: copy reusable code into a
+      Google Doc for future reference. Presented as one method,
+      not the best one — you'll develop your own.)
+
+  Supporting resources: documentation (covered in a future
+  video) tells you what functions exist, what arguments they
+  take, and what methods are available.
+  [Terminology in play here: functions, arguments, methods.]
+
+STEP 3 — CORRECT ERRORS
+  You WILL have errors. Even experienced programmers do — the
+  instructor says running into someone who never has errors is
+  basically impossible. (A dedicated video covers errors.)
+
+  Two error types introduced:
+    - SYNTAX ERROR: shows up immediately; the program won't even
+      run. Common causes: using an undefined variable, a typo.
+    - LOGIC ERROR: the program runs but produces the wrong
+      result. Caught by testing (see Step 4).
+
+STEP 4 — TEST THE PROGRAM
+  Go back to your example input/output from the design step.
+  Did you get the correct output for your example input? Often
+  the answer is no → you have logic errors to fix.
+
+================================================================
+THE PROCESS IS ITERATIVE
+================================================================
+Fixing logic errors may send you back to Step 1 (design). This
+is NOT a failure or starting over:
+  - You've usually already made significant progress.
+  - Students who feel totally lost typically have most of the
+    pieces and are missing just one small step.
+  - "Going back to design" usually means tweaking the steps you
+    already have, not rebuilding from scratch.
+
+================================================================
+HIGH-VALUE TAKEAWAYS
+================================================================
+  - Memorize the loop: Design → Write → Correct Errors → Test →
+    (loop back to Design as needed).
+  - Plan input/output and example cases BEFORE coding.
+  - Decompose problems into steps; start from the steps you
+    already know how to do.
+  - Pseudocode bridges design and code.
+  - Programming = adapting examples; for this course, adapt from
+    the course material.
+  - Distinguish syntax errors (won't run) from logic errors
+    (runs, wrong output); testing against example I/O catches
+    the latter.
+  - Iteration is expected and productive, not a setback.

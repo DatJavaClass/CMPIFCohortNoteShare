@@ -1,0 +1,66 @@
+Getting Stuck on Programming Problems — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: Getting Stuck on Programming Problems
+
+================================================================
+THE PREMISE
+================================================================
+Getting stuck is INEVITABLE. The instructor describes spending
+hours debugging, searching online, staying up late — and it being
+maddening. The question this lecture answers: when stuck, what
+should you actually do?
+
+================================================================
+WHY STRUGGLE ISN'T WASTED TIME
+================================================================
+Those hours stuck aren't (mostly) wasted, because you're LEARNING
+how to accomplish something — so next time you're less lost.
+
+Instructor's personal habit: when he works through a stuck point,
+he writes quick notes with example code in a reference document
+for later reuse. Offered as ONE method, explicitly not claimed as
+the best or universal — find what works for you.
+
+================================================================
+THE KEY DISTINCTION — HOW YOU USE RESOURCES
+================================================================
+What to AVOID: jumping to resources in ways that just hand you the
+output without making you think or learn.
+
+Two copy-paste traps called out:
+  - Generative AI — asking direct questions and pasting exact
+    answers
+  - Posted online solutions — common for intro-level material,
+    often copyable nearly wholesale
+
+Both mean you're not learning much. (The instructor promises a
+later video on what counts as GOOD use of resources like
+generative AI.)
+
+================================================================
+THE ARGUMENT FOR DOING IT THE HARD WAY
+================================================================
+  - You're here to LEARN, not just to get a grade. Someone (you
+    or another investor) is investing in this degree — the point
+    is to actually know something at the end.
+  - Struggling more early on pays off later in what you actually
+    know.
+  - JOB-MARKET REALITY: data scientists and programmers are
+    tested in interviews on code they can produce THEMSELVES —
+    not what generative AI produces for them.
+  - To get hired in data science you'll need to either come up
+    with and code solutions yourself, OR at minimum understand
+    and correct what generative AI produces.
+
+================================================================
+HIGH-VALUE TAKEAWAYS
+================================================================
+  - Being stuck is normal and is itself part of learning — don't
+    treat it as failure.
+  - Don't short-circuit learning by copy-pasting answers (from AI
+    or posted solutions); that defeats the purpose of the course.
+  - Keep your own reference notes of solutions you work out.
+  - The long-term payoff (real skill, interview performance,
+    employability) justifies the short-term struggle.
+  - Minimum bar even when using AI: be able to understand and
+    correct its output, not just paste it.

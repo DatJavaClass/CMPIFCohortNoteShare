@@ -1,0 +1,38 @@
+VARIANCE AND STANDARD DEVIATION — CLIFF NOTES
+Module 4
+
+PURPOSE
+Variance and standard deviation measure how dispersed (spread out) data are around the mean. They apply to any distribution, not just a normal curve. End goal: expressing uncertainty about the average value.
+
+VARIANCE (s^2)
+Formula: s^2 = (1 / (n - 1)) * sum of (x_i - x_bar)^2
+
+Steps:
+1. Compute the sample mean (x_bar).
+2. For each value, find its deviation from the mean: (x_i - x_bar).
+3. Square each deviation. Squaring weights far-from-mean values more heavily and ignores sign.
+4. Sum all squared deviations.
+5. Divide by (n - 1).
+
+Variance is always in squared units.
+
+STANDARD DEVIATION (SD)
+SD = sqrt(variance) = variance ** 0.5
+
+- Returns the value to the original units (meters, kg, etc.), which is why it's the commonly reported spread measure.
+- Interpretation: a "typical" distance from the mean — but not a true average, since it's the square root of the average of squared distances. It gives extra weight to outliers.
+
+CODE NOTES
+- my_variance(x): compute x_bar = my_average(x); squared_dev = [(xi - x_bar)**2 for xi in x]; return sum(squared_dev) / (len(x) - 1).
+- SD: call sqrt on the variance — e.g. my_variance(x) ** 0.5. Common bug shown in lecture: referencing "variance" without actually calling the variance function (NameError) — make sure SD calls my_variance(x), not an undefined name.
+
+WORKED EXAMPLE
+- List A: 48, 49, 50, 51, 52 -> mean 50, SD ~1.5 (tightly clustered).
+- List B: 0, 25, 50, 75, 100 -> mean 50, SD ~40 (widely spread).
+- Same mean, very different spread — illustrates why SD/variance matter beyond the average.
+
+KEY TAKEAWAYS
+- Same mean does NOT mean same spread.
+- Variance is in squared units; SD restores original units.
+- Divide by n-1 (sample), not n.
+- SD ≈ typical distance from the mean, with outliers weighted more.

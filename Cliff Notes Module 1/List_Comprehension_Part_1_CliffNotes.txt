@@ -1,0 +1,163 @@
+List Comprehension, Part 1 — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: List_Comprehension_Part_1 lecture transcript
+
+================================================================
+CORE CONCEPT
+================================================================
+A list comprehension is a one-line shorthand for the common pattern
+of "take an old list, do something to each element, build a new
+list from the results." It replaces a multi-line for loop with a
+single expression.
+
+When to reach for it:
+  - The transformation per element is simple and the one-liner
+    stays readable.
+When to stay with a for loop:
+  - Logic is complex enough that spelling out each step is clearer.
+
+The two formats are interchangeable for this pattern; pick whichever
+makes the code easier to read.
+
+================================================================
+THE FOR-LOOP VERSION (THE BASELINE)
+================================================================
+Example: take a list of fruits, append " salad" to each, collect
+results in a new list.
+
+  fruits = ["apple", "orange", "banana"]
+  salads = []
+  for fruit in fruits:
+      salad = fruit + " salad"
+      salads.append(salad)
+
+Output: ["apple salad", "orange salad", "banana salad"]
+
+This works, but it takes four lines (plus initialization) to express
+a single transformation. List comprehension compresses it.
+
+================================================================
+THE FOUR ELEMENTS OF THE PATTERN
+================================================================
+Every list comprehension is built from the same four pieces that
+appear in the for-loop version:
+
+  1. NEW LIST          — what you're building (e.g., salads)
+  2. ITERATING VARIABLE — the name you give each element as you
+                          loop (e.g., fruit). You make this up.
+  3. OLD LIST          — the source you're iterating over (e.g.,
+                          fruits)
+  4. ACTION            — what you do to each element to produce
+                          the new value (e.g., fruit + " salad")
+
+Identify these four in the for-loop version and you can rewrite
+it as a comprehension mechanically.
+
+================================================================
+LIST COMPREHENSION SYNTAX
+================================================================
+General form:
+
+  new_list = [action for iterating_variable in old_list]
+
+Applied to the fruits example:
+
+  salads = [fruit + " salad" for fruit in fruits]
+
+One line. Same output as the four-line for loop above.
+
+Reading order (left to right):
+  - "salads ="            → the new list
+  - "fruit + ' salad'"    → the action
+  - "for fruit"           → the iterating variable
+  - "in fruits"           → the old list
+
+Note: the iterating variable (`fruit`) appears in the action BEFORE
+it's defined syntactically. Python handles this — the comprehension
+binds it as it iterates.
+
+================================================================
+HIGH-VALUE TAKEAWAYS
+================================================================
+  - List comprehension = compressed for-loop-that-builds-a-list.
+  - Memorize the four elements: new list, iterating variable,
+    old list, action.
+  - Syntax pattern: [action for var in old_list]
+  - Equivalent to: initialize empty list → for loop → append.
+  - Choose comprehension for clean, simple transformations;
+    choose for loop when steps need to be spelled out for clarity.
+  - The iterating variable name is yours to pick — make it
+    descriptive (fruit, not x, when the list contains fruits).
+
+
+--- WHAT THIS LECTURE IS ACTUALLY TEACHING ---
+
+Plain English: "Here's how to loop through one list, do something
+to each item, and collect the results in a new list. Then here's a
+shorter way to write the same thing."
+
+Concept 1 — The for-loop pattern (the real lesson):
+
+  fruits = ['apple', 'orange', 'banana']
+  salads = []                          # Empty list to collect into
+  for fruit in fruits:                 # Loop through each fruit
+      salad = fruit + ' salad'         # Build the new string
+      salads.append(salad)             # Add it to the collection
+
+  print(salads)
+  # ['apple salad', 'orange salad', 'banana salad']
+
+Three rules to remember about this pattern:
+  1. The empty list (salads = []) MUST come before the loop.
+     If you put it inside, you destroy the list every iteration.
+  2. The iterating variable (fruit) must match between the `for`
+     line and inside the loop. Python is case-sensitive — `fruit`
+     and `Fruit` are different variables.
+  3. Singular vs plural naming is intentional: `salads` (plural)
+     is the container, `salad` (singular) is the current item
+     being built.
+
+Concept 2 — The comprehension shorthand (the "sales pitch"):
+
+  salads = [fruit + ' salad' for fruit in fruits]
+
+Same result, one line. The brackets `[ ]` do two jobs the for loop
+needed separate lines for: they create the new list AND append to
+it automatically. That's why the comprehension doesn't need a
+preceding `salads = []` — the brackets handle initialization.
+
+--- VISUAL TRANSLATION (the diagram Yoder should have drawn) ---
+
+  salads = []                              ┐
+  for fruit in fruits:                     ├──→  salads = [fruit + ' salad' for fruit in fruits]
+      salad = fruit + ' salad'             │             └─action────┘  └─var┘   └old─┘
+      salads.append(salad)                 ┘
+                                             (the brackets replace the
+                                              empty-list init AND .append)
+
+Same four pieces. Same logic. Just rearranged onto one line.
+
+--- KEY DISTINCTION YODER NEVER MADE EXPLICIT ---
+
+List comprehension is SYNTAX, not a METHOD.
+  - Methods (.append(), .upper(), .sort()) are named functions you
+    call with parentheses on an object.
+  - Syntax (for loops, if statements, list comprehensions) is
+    grammatical structure built into Python itself. You don't call
+    it — you write code in that shape and Python recognizes it.
+
+This matters because:
+  - There's no "list comprehension function" to look up.
+  - The square brackets + the word `for` together ARE the
+    instruction. No import, no method call.
+  - Same pattern extends to dict comprehensions {k:v for ...},
+    set comprehensions {x for ...}, and generator expressions
+    (x for ...) — different brackets, same grammar.
+
+--- THE FULL THREE-LINE PROGRAM ---
+
+  fruits = ['apple', 'orange', 'banana']
+  salads = [fruit + ' salad' for fruit in fruits]
+  print(salads)
+
+That is the entire content of the lecture, written out.

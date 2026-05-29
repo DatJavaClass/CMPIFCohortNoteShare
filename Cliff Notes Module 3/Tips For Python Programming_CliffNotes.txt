@@ -1,0 +1,50 @@
+Tips For Python Programming — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: Tips For Python Programming
+
+================================================================
+THE CORE SHIFT (FOR NEW PROGRAMMERS)
+================================================================
+Programming is a fundamentally different way of operating a
+computer than what you're used to:
+
+  - FROM: pointing and clicking on things (GUI, menus) — what
+    most people have done their whole lives
+  - TO: writing commands and inventing variable names for
+    "imaginary objects" that live in a programming world you
+    construct
+
+No drop-down menus to choose from. You generate the commands
+yourself. The disorientation this causes is normal — the lecture
+describes it as feeling "unmoored" or "floating free."
+
+================================================================
+REASSURANCE (WORTH INTERNALIZING)
+================================================================
+  - Struggle and frustration at this stage are common and
+    expected, even among capable students.
+  - Most people — including those brand new to programming —
+    find their footing within a few weeks to a few months.
+  - The module's purpose is to provide "anchors" so you're not
+    adrift.
+
+================================================================
+HOW TO APPROACH PROGRAMMING PROBLEMS
+================================================================
+This course is largely about using programming to solve problems.
+Key mindset points:
+
+  - It's a CREATIVE problem-solving process, not a lookup task.
+  - There is NO single "best way" to solve a problem.
+  - Some approaches are better than others — but DON'T worry
+    about optimizing this early on.
+  - Primary early goal: just get something that WORKS.
+    Refinement and "better ways" come later.
+
+================================================================
+HIGH-VALUE TAKEAWAY
+================================================================
+Early on, prioritize a working solution over an elegant or
+optimal one. Expect disorientation, treat it as a normal phase,
+and lean on the structure ("anchors") the course provides rather
+than expecting to know how to start from nothing.

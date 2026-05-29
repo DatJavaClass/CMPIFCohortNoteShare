@@ -1,0 +1,73 @@
+Student Support — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: Student Support
+
+================================================================
+QUICK REFERENCE — WHERE TO GO BASED ON QUESTION TYPE
+================================================================
+  - Peer collaboration, non-urgent public Q       → Slack
+  - Stuck on assignments / quizzes, non-urgent    → Discussion Forums
+  - Live help, scheduled                          → Office Hours
+  - Urgent or private matters                     → Email (ticket)
+
+================================================================
+1. SLACK
+================================================================
+  - Available throughout the entire MDS program
+  - Purpose: peer connection and collaboration
+  - For this course: join channel CMPINF2100
+    (browse all channels OR search "CMPINF2100" and filter by
+    channels)
+  - Channels ARE monitored, but the teaching team does NOT
+    respond there. For staff response → email.
+  - Academic integrity rules apply — do NOT share answers or
+    solutions on Slack.
+
+================================================================
+2. OFFICE HOURS
+================================================================
+  - Found under "Live Events" in Coursera
+  - Also visible on the Coursera calendar
+  - Automated email reminder ~24 hours before each session
+
+================================================================
+3. DISCUSSION FORUMS
+================================================================
+  - Located in Coursera, sorted by Module
+  - Best for: non-urgent questions, getting unstuck on
+    assignments/quizzes, general course questions
+  - Teaching team monitors but DOES NOT GUARANTEE a response
+  - Rules:
+      - Do not post personal or sensitive information
+      - Do not post large segments of your own completed code or
+        answers
+  - Urgent questions → email instead
+
+================================================================
+4. EMAIL — THE OFFICIAL CHANNEL
+================================================================
+  Address: online-mds-support@pitt.edu
+
+  Use for:
+    - Urgent questions
+    - Anything requiring privacy
+    - Anything that needs a guaranteed response
+
+  Email-writing rules:
+    - Include the course number "CMPINF 2100" in the email
+    - Include the module or assignment number if applicable
+    - This creates a support TICKET — that's how it gets routed
+      to the right person
+
+  WARNING: Emails sent to any other address may go unnoticed.
+  Use this address unless specifically told otherwise.
+
+================================================================
+HIGH-VALUE PRACTICAL NOTES
+================================================================
+  - Only email provides a GUARANTEED response. Slack and forums
+    are best-effort.
+  - The course is online and large — support is structured
+    around routing and tickets, not ad-hoc messaging.
+  - Default mental model: peer help on Slack/forums; staff help
+    via email; live help via office hours.

@@ -1,0 +1,115 @@
+The Data Science Pipeline — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: The Data Science Pipeline lecture transcript
+
+================================================================
+CORE CONCEPT
+================================================================
+The "data science pipeline" is the process you'll follow throughout
+this course and the MDS program. When deep in technical weeds,
+"pop up a level" and identify which pipeline step you're on — it
+keeps purpose in view.
+
+Underlying framework: CRISP-DM (Cross-Industry Standard Process for
+Data Mining). Widely used in industry and research. Worth looking up
+independently; you'll encounter it repeatedly.
+
+================================================================
+THE SIX STEPS
+================================================================
+
+STEP 1 — RESEARCH QUESTION / BUSINESS OBJECTIVE
+  Always start here. You want to know SOMETHING from data.
+  Examples given:
+    - Early indicators of developing diabetes?
+    - What type of customers is my business losing?
+    - Where will housing prices rise or fall?
+    - What video will go viral?
+  Must be answerable with quantitative measures.
+
+STEP 2 — SELECT AND UNDERSTAND DATA SETS
+  Identify which data sets can help answer the question.
+  - Sometimes good data doesn't exist; you may have to find or
+    derive it.
+  - In later MDS courses you'll source your own data; in THIS
+    course you'll work with pre-collected sets.
+  - Always ask: Why was this data collected? How was it collected?
+    How representative is it of the phenomenon under study?
+
+  Instructor's social media bot example: different "bot data sets"
+  vary wildly by collection method. Some find a seed of bots and
+  expand by similarity — but if the seed is all political bots,
+  the data set misses news bots and other types entirely. Lesson:
+  scrutinize collection method and look for variety. Ask what
+  might be MISSING from the data.
+
+STEP 3 — PREPARE AND CLEAN THE DATA
+  Often cited as ~80% of a data scientist's work.
+
+  Why so much:
+    - Data is often incomplete → handle missing values
+    - Irrelevant data → remove what doesn't fit the question
+    - Wrong granularity → aggregate (e.g., cities → states/regions),
+      potentially CREATING new attributes
+    - Multiple sources → combining and integrating data sets
+    - Type/format issues — numbers stored as strings, inconsistent
+      abbreviations, weird formatting — must be normalized
+
+STEP 4 — EXPLORE THE DATA
+  Identify and visualize basic trends, counts, distributions.
+  - What are the most/least frequent values?
+  - How many data points exist across different attribute values?
+    (Instructor's example: how many McDonald's are carrying
+    shamrock shakes this year, and where?)
+  - Summary statistics
+  - Visible trends that bear on the research question
+
+  CRITICAL NUANCE: Steps 3 and 4 are iterative, not strictly
+  sequential. You'll clean → explore → spot an outlier → return
+  to cleaning. Outliers may be mistakes to remove OR genuinely
+  important signals. Judgment required.
+
+STEP 5 — STATISTICAL MODELING
+  Identify statistical patterns within data. Most often takes the
+  form of PREDICTIVE MODELING.
+
+  The structure:
+    - One attribute is the OUTCOME you care about (the thing you
+      want to predict)
+    - Other attributes are candidate PREDICTORS
+    - Test which predictors are associated with / can predict the
+      outcome
+
+  Examples mapped onto this structure:
+    - Outcome: developing diabetes
+      Predictors: health history attributes
+    - Outcome: customer churn (stops being a customer)
+      Predictors: customer attributes correlated with churn
+
+STEP 6 — COMMUNICATE THE RESULTS
+  Evaluate and interpret the models, then tell stakeholders what
+  was found.
+
+  Key constraints:
+    - Stakeholders likely DO NOT have an MDS background. Translate.
+    - Convey trends, associations, and predictions clearly
+    - More broadly: tell a STORY — what was learned from the data,
+      why it matters, and how it answers the original question
+
+  This step closes the loop back to Step 1.
+
+================================================================
+HIGH-VALUE TAKEAWAYS FOR EXAM / APPLICATION
+================================================================
+  - Memorize the 6 steps in order. Be able to name CRISP-DM as
+    the underlying framework.
+  - The pipeline is iterative, not strictly linear (especially
+    cleaning ↔ exploration).
+  - 80% of the work is cleaning/preparation — internalize this
+    expectation.
+  - Always interrogate data provenance: who collected it, how,
+    and what's missing.
+  - Modeling is structured around one outcome attribute and
+    multiple predictor attributes.
+  - Communication step is non-optional — analysis that can't be
+    explained to a stakeholder hasn't completed the pipeline.

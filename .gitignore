@@ -1,0 +1,12 @@
+# Ignore everything
+/*
+
+# Except these
+!.gitignore
+!LICENSE
+!README.md
+!Sandbox.ipynb
+!/Cliff Notes Module 1/
+!/Cliff Notes Module 2/
+!/Cliff Notes Module 3/
+!/Cliff Notes Module 4/

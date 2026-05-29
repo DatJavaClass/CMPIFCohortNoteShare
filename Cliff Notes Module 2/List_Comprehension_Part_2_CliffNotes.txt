@@ -1,0 +1,95 @@
+List Comprehension, Part 2 — Mini Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: Module-2_List_Comprehensions_Part_2.html (notebook export)
+Note: No lecture transcript available; notes derived from the
+notebook contents only.
+
+================================================================
+WHAT PART 2 ACTUALLY ADDS
+================================================================
+Almost nothing new beyond Part 1. The notebook re-states the
+syntax template, then walks through one additional concrete
+example (squaring numbers) to reinforce the same pattern.
+
+If you understood Part 1, you understand Part 2. The lecture is
+a second pass at the same idea with a different example.
+
+================================================================
+THE TEMPLATE (RESTATED FROM PART 1)
+================================================================
+For loop that builds a new list:
+
+  new_list = []
+  for <iterating variable> in <old_list>:
+      new_variable = <action on iterating variable>
+      new_list.append(new_variable)
+
+Equivalent list comprehension:
+
+  new_list = [<action on iterating variable> for <iterating variable> in <old_list>]
+
+Same four pieces (new list, action, iterating variable, old list),
+same logic, one line instead of four.
+
+================================================================
+THE NEW EXAMPLE — SQUARING NUMBERS
+================================================================
+Input:
+
+  my_list = [1, 2, 3, 4]
+
+For-loop version:
+
+  squared_list = []
+  for n in my_list:
+      n_squared = n**2
+      squared_list.append(n_squared)
+
+  squared_list
+  # [1, 4, 9, 16]
+
+List comprehension version:
+
+  squared_list_comp = [n**2 for n in my_list]
+  squared_list_comp
+  # [1, 4, 9, 16]
+
+Both produce the same output. The comprehension collapses three
+loop-body lines into one expression.
+
+Pattern note (carried from Part 1):
+  - `n` is the iterating variable (scratch — holds current item)
+  - `n_squared` is a scratch variable (holds current result)
+  - `squared_list` is the collector (holds everything)
+  - At the end of the loop, `n` = 4 and `n_squared` = 16, but
+    `squared_list` = [1, 4, 9, 16]. The collector is what you
+    want to inspect.
+
+================================================================
+KEY OPERATOR INTRODUCED (IF NOT SEEN BEFORE)
+================================================================
+  **  is the exponentiation operator in Python.
+  n**2 means "n raised to the power of 2" (i.e., n squared).
+  n**3 would be n cubed, n**0.5 would be the square root, etc.
+
+Not "n*2" (that's multiplication) and not "n^2" (that's bitwise
+XOR in Python, NOT exponentiation — common trap for people
+coming from other languages or math notation).
+
+================================================================
+QUICK REFERENCE — THE WHOLE TWO-LECTURE SEQUENCE IN ONE BOX
+================================================================
+For loop pattern:
+  new_list = []
+  for item in old_list:
+      result = <do something with item>
+      new_list.append(result)
+
+Comprehension equivalent:
+  new_list = [<do something with item> for item in old_list]
+
+Worked examples:
+  Part 1:  salads = [fruit + ' salad' for fruit in fruits]
+  Part 2:  squared_list = [n**2 for n in my_list]
+
+That is the complete content of both lectures.

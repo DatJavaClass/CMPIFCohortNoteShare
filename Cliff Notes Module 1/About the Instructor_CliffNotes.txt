@@ -1,0 +1,66 @@
+About the Instructor — Study Guide
+Course: Introduction to Data-Centric Computing (CMPINF-2100)
+Source: About the Instructor
+
+================================================================
+WHO
+================================================================
+Michael Miller-Yoder — Teaching Assistant Professor, University
+of Pittsburgh, School of Computing and Information.
+
+Personal site: https://michaelmilleryoder.github.io/
+
+================================================================
+ACADEMIC BACKGROUND
+================================================================
+  - Undergrad: Computer Science major
+  - PhD: Carnegie Mellon University, Language Technologies
+    Institute
+  - Postdoc: Carnegie Mellon University, Software and Societal
+    Systems Department
+      - Postdoc focus: hate speech and online extremism, studied
+        via language use and change in online forums
+
+Path INTO data science: not from formal coursework — picked it up
+working as a research programmer in a psychology lab during
+undergrad, then continued through grad school. Useful precedent:
+the field is reachable from adjacent technical roles.
+
+================================================================
+TEACHING FOCUS
+================================================================
+Teaches data science to students across a wide range of
+backgrounds — from those new to computational thinking to those
+already deep in CS. Relevant to this course: it is explicitly
+designed to accommodate both ends of that spectrum.
+
+================================================================
+RESEARCH AREAS
+================================================================
+Two main threads, both data-science-adjacent:
+
+  - Natural Language Processing (NLP)
+    Applying data science principles to large datasets of text
+    or speech.
+
+  - Computational Social Science
+    Studying how people interact socially and form communities
+    by analyzing logs of social behavior (typically online),
+    using data science methods.
+
+================================================================
+PERSONAL / CONTEXT
+================================================================
+  - From Iowa originally; in Pittsburgh since 2015
+  - Outside work: biking (commuting and long-distance touring),
+    family, twin preschoolers
+
+================================================================
+WHY THIS MATTERS FOR THE COURSE
+================================================================
+  - The instructor's research uses the same pipeline you'll
+    learn. Examples drawn from class are likely to lean on text /
+    language / online community data.
+  - His own path validates the program's premise: data science
+    skills are picked up by doing, often through adjacent
+    research work — not only through formal stats coursework.
