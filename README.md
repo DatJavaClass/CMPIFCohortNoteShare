@@ -1,3 +1,5 @@
+<img width="561" height="701" alt="Coding Man" src="https://github.com/user-attachments/assets/c62c7f73-4776-4a9b-b493-52e44a6def69" />
+
 # CMPIF2100 — Cliff Notes & Sandbox
 
 These are my auto-generated cliff notes, produced in part with my **CMPIF2100 Lab Transcriber**. As per the permission given during the **5/28 study hall**, I'm sharing them with the rest of the cohort. I'll do my best to keep this repo updated.
