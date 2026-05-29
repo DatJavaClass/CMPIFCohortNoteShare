@@ -1,4 +1,4 @@
-<img width="561" height="701" alt="Coding Man" src="https://github.com/user-attachments/assets/c62c7f73-4776-4a9b-b493-52e44a6def69" />
+<p align="center"><img width="561" height="701" alt="Coding Man" src="https://github.com/user-attachments/assets/c62c7f73-4776-4a9b-b493-52e44a6def69" /></p>
 
 # CMPIF2100 — Cliff Notes & Sandbox
 
