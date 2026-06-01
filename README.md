@@ -17,4 +17,4 @@ The notes are organized by module:
 
 Also included is **`Sandbox.ipynb`** — an entirely blank-slate Jupyter notebook I use as "scratch paper" while working through assignments. Feel free to use it the same way.
 
-As Always! You're awesome Stay awesome! and I wish everyone the best of grades!
+As Always! You're awesome, Stay awesome! and I wish everyone the best of grades!
