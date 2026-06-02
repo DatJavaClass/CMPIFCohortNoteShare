@@ -12,6 +12,7 @@ The notes are organized by module:
 - `Cliff Notes Module 2/`
 - `Cliff Notes Module 3/`
 - `Cliff Notes Module 4/`
+- `Cliff Notes Module 5/`
 
 ## Sandbox
 
