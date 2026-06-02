@@ -1,0 +1,128 @@
+=====================================================================
+CLIFF NOTES — NumPy 2D Arrays: Conditional Filtering & Summary Stats
+=====================================================================
+
+THE ONE RULE THAT UNLOCKS EVERYTHING
+------------------------------------
+Indexing is RC: arr[row, column].
+  - First slot  = ROWS
+  - Second slot = COLUMNS
+  - ":" in a slot means "ALL of that axis" (don't filter this one).
+
+Examples:
+  arr[0, :]   -> row 0, all columns      -> one row
+  arr[:, 0]   -> all rows, column 0      -> one column
+  arr[0, 0]   -> single element
+  arr[:, :]   -> the whole array (read all)
+
+":" is a LOCATION selector ("which positions"), not a memory thing.
+
+
+---------------------------------------------------------------------
+1. SORTING  (np.sort)
+---------------------------------------------------------------------
+np.sort(arr, axis=...) returns a NEW sorted array (original unchanged).
+arr.sort() sorts IN PLACE (mutates the original).
+
+  axis=0  -> sort each COLUMN (sorts down the rows)
+  axis=1  -> sort each ROW    (sorts across the columns)
+  axis=-1 -> last axis (default)
+
+
+---------------------------------------------------------------------
+2. CONDITIONAL FILTERING  (the core skill)
+---------------------------------------------------------------------
+A mask is just a BOOLEAN TEST: one True/False per item on an axis.
+Filtering is always TWO STAGES:
+
+  STAGE A — BUILD the mask  (round up all candidates, test each -> bools)
+  STAGE B — APPLY the mask  (drop it in the bracket -> returns VALUES)
+
+KEY: Stage A gives bools. Stage B gives the actual VALUES you keep.
+If your FINAL output is bools, you forgot to apply the mask.
+
+WHERE the mask goes decides what gets filtered:
+  Keeping ROWS    -> mask in FIRST slot:  arr[mask, :]
+  Keeping COLUMNS -> mask in SECOND slot: arr[:, mask]
+  The ":" always sits in the axis you are NOT filtering.
+
+Mask length must match the axis it filters.
+
+--- Filter across ALL elements (ignores rows/cols) ---
+  arr[arr < 5]      -> returns a FLATTENED 1D array of matching elements.
+
+--- Filter ROWS by a condition on one column ---
+Trap: "the column" is only WHERE you look; you still KEEP whole rows.
+  mask = arr[:, 0] > 5     # build from the first column (all rows)
+  arr[mask, :]             # apply in the ROW slot
+  one-liner: arr[arr[:, 0] > 5]
+
+--- Filter COLUMNS by a condition on one row ---
+Mirror image. Build mask from a row, apply in the COLUMN slot.
+  mask = arr[0, :] > 5
+  arr[:, mask]
+  one-liner: arr[:, arr[0, :] > 5]
+
+--- Compare one row AGAINST another (element-wise) ---
+  mask = arr[0, :] > arr[1, :]   # one bool per column
+  arr[:, mask]                   # keep the winning columns
+
+
+---------------------------------------------------------------------
+3. SUMMARY STATISTICS  (axis = direction to COLLAPSE)
+---------------------------------------------------------------------
+axis is NOT selection — it's which way a calculation crushes the grid.
+Think of it as arrows. The result keeps the axis you did NOT collapse.
+
+  axis=0   -> collapse DOWN  (kills rows)    -> one stat PER COLUMN
+  axis=1   -> collapse ACROSS (kills cols)   -> one stat PER ROW
+  axis=None-> collapse EVERYTHING            -> ONE single number
+
+COUNTERINTUITIVE (memorize): "mean of each ROW" uses axis=1.
+  To get a per-ROW answer you sweep across the COLUMNS -> axis=1.
+Safety check: 2 rows -> expect 2 row-means -> that's axis=1.
+              (axis=0 would give one value per column instead.)
+
+  arr.mean(axis=0)   # mean of each column
+  arr.mean(axis=1)   # mean of each row
+  arr.mean(axis=None)# mean of all elements (one number)
+  (.std, .sum, etc. all take the same axis argument)
+
+
+---------------------------------------------------------------------
+4. SLICING & COPYING — AVOIDING SIDE EFFECTS
+---------------------------------------------------------------------
+A plain slice is a VIEW, not a copy. It shares memory with the original.
+Mutating the slice MUTATES the original.
+
+  sub = arr[0:2, 0:2]   # VIEW (a window onto the same data)
+  sub[:] = 999          # this ALSO changes arr!  <-- side effect
+
+To get an independent piece, call .copy():
+
+  sub = arr[0:2, 0:2].copy()  # separate data
+  sub[:] = 999                # arr stays untouched
+
+Mental model:
+  VIEW = your hand resting on part of the SAME box -> poke it, original changes.
+  COPY = a second, independently built box        -> poke it, original is safe.
+Question to ask: did a SECOND box get built (.copy()) or am I holding
+part of the only box I had (plain slice)?
+
+Note: re-assigning (arr = np.array([...])) does NOT repair a damaged
+array — it builds a brand-new one and moves the NAME onto it. The
+variable name is just a nameplate; identity lives at the object.
+
+
+---------------------------------------------------------------------
+THE UNIVERSAL FILTERING PATTERN (all three practice problems)
+---------------------------------------------------------------------
+Build a line of booleans -> drop it in the slot of the axis you're
+filtering, ":" in the other slot.
+
+  Keep rows where 3rd column > 3:   arr[arr[:, 2] > 3, :]
+  Keep cols where row0 > row1:      arr[:, arr[0,:] > arr[1,:]]
+  Keep rows where row-mean > 4:     arr[arr.mean(axis=1) > 4, :]
+
+Same skeleton every time. Master the two-stage move and the RC slots.
+=====================================================================

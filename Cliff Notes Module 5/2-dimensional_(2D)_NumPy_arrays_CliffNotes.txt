@@ -1,0 +1,54 @@
+CLIFF NOTES: 2-Dimensional (2D) NumPy Arrays (Module 5)
+
+1. WHAT A 2D ARRAY IS
+- Rows and columns - like a table, but since it's numeric, really a matrix.
+- import numpy as np (same convention as before).
+
+2. CREATING FROM A LIST OF LISTS (most common)
+- np.array([[1,2,3],[4,5,6]]) -> a structured 2x3 matrix.
+- A raw Python list of lists is NOT special to Python: len([[...],[...]]) is just 2
+  (two elements that happen to be lists). NumPy is what gives it matrix structure.
+- White space / line breaks in the source code are only for readability; Python
+  ignores them inside brackets and parentheses.
+- ROWS MUST BE EQUAL LENGTH. Ragged inner lists (e.g. [1,2,3] and [1,2]) raise a
+  ValueError - the shape doesn't make sense.
+
+3. ATTRIBUTES
+- ndim  -> 2.
+- shape -> tuple (rows, columns). A 2-row, 3-column array is (2, 3). Mnemonic: RC,
+  rows then columns.
+- size  -> total element count (a 4x3 array has size 12; a single sliced row has 3).
+  size is aware of the full row x column total, which a plain list is not.
+
+4. CREATING 2D ARRAYS FROM 1D ARRAYS
+- np.concatenate([a, b]) joins arrays but stays 1D - just a longer flat list.
+- np.vstack([a, b]) stacks arrays vertically -> a 2D array.
+    Stacking two 5-element 1D arrays gives shape (2, 5).
+- IMPORTANT: the arrays to combine go INSIDE a list or tuple as one argument,
+  e.g. np.vstack([zeros, ones]). Forgetting the list/tuple wrapper raises an error.
+
+5. CREATING 2D ARRAYS DIRECTLY (zeros / ones)
+- Pass the SHAPE as a tuple (note the double parentheses):
+    np.zeros((2, 2))  -> 2x2 of zeros
+    np.ones((3, 2))   -> 3x2 of ones
+- A single number instead of a tuple gives a 1D array.
+- vstack rule for 2D: arrays must share the SAME NUMBER OF COLUMNS (rows can differ).
+    vstack of a (2,2) and a (3,2) works -> (5, 2). Mismatched columns errors.
+
+6. SLICING AND INDEXING 2D ARRAYS
+- Syntax: arr[row_index, column_index] - row first, column second (RC).
+  This single-bracket, comma-separated form is different from plain Python indexing.
+- Empty colon ( : ) means ALL rows or ALL columns (as well as its usual slice use).
+- Examples (on a 4x3 array):
+    arr[0, :]    -> first row, all columns
+    arr[-1, :]   -> last row, all columns
+    arr[1, 2]    -> single cell at row 1, column 2
+    arr[:2, :]   -> first two rows, all columns
+    arr[:3, 1:]  -> first three rows, columns from index 1 onward (drops column 0)
+
+SUMMARY
+A 2D array is a matrix: build it from a list of lists (equal-length rows required)
+or from 1D arrays via np.vstack (wrap inputs in a list/tuple; columns must match).
+Direct construction with np.zeros / np.ones takes the shape as a tuple. Know ndim
+(2), shape (rows, columns), and size (total cells). Index/slice with
+arr[rows, columns] - row first, column second, and ":" means "all".

@@ -1,0 +1,46 @@
+CLIFF NOTES: 1-Dimensional (1D) NumPy Arrays (Module 5)
+
+1. IMPORT CONVENTION
+- import numpy as np   (np alias is standard; you type it constantly)
+
+2. CREATING A 1D ARRAY WITH arange
+- np.arange(6)  ->  array([0, 1, 2, 3, 4, 5])  (0 up to but NOT including 6)
+- Like Python's range(), but returns an array directly. range() returns a lazy
+  object you'd have to wrap in list(); arange gives you the numbers immediately.
+
+3. THE ndarray TYPE
+- type(arr) -> numpy.ndarray, the fundamental NumPy data type (n-dimensional array).
+- Has far more functionality (callable attributes/methods) than a plain list.
+
+4. INDEXING AND SLICING (same as lists)
+- arr[0]  first element; arr[-1]  last element.
+- arr[:3] -> elements at positions 0, 1, 2 (stop is exclusive).
+- Element dtype shows as int64 (a NumPy integer type) - still just an integer.
+
+5. KEY ATTRIBUTES (called on the array itself)
+- arr.ndim  -> number of dimensions; 1 for 1D data (a list, not a table).
+- arr.shape -> a tuple. For 1D it has ONE element, e.g. (6,). (Rows/columns matter
+  more once you hit 2D.)
+- arr.size  -> count of elements (6). Alternative to len().
+
+6. OTHER WAYS TO CREATE 1D ARRAYS
+- From a list:        np.array([ ... ])
+- All zeros / ones:   np.zeros(5), np.ones(5)
+- arange with step (3rd arg): np.arange(0, 10, 2) -> 0,2,4,6,8.
+    Stop is exclusive, so to include 10 use np.arange(0, 11, 2).
+- np.linspace(start, stop, num): stop is INCLUSIVE; you specify how many points.
+    e.g. np.linspace(0, 1, 50) gives 50 evenly spaced points from 0 to 1 inclusive.
+    (Watch the endpoint/count interaction - asking for both endpoints affects spacing.)
+
+7. ELEMENT-WISE OPERATIONS (differ from Python lists - important)
+- ==  compares element by element and returns a boolean ARRAY (not one True/False).
+- np.array_equal(a, b) returns a single bool for whole-array equality.
+- +  adds element-wise for arrays. For lists, + concatenates instead.
+    [1,2] + [1,2] -> [1,2,1,2], but np.array([1,2]) + np.array([1,2]) -> [2,4].
+
+SUMMARY
+1D arrays are list-like: create with np.arange / np.array / np.zeros / np.ones /
+np.linspace, index and slice like lists. Know ndim (=1), shape (one-element tuple),
+and size. The real departure from lists is element-wise behavior: ==, +, and friends
+operate per element, returning arrays; use np.array_equal for a single whole-array
+comparison.

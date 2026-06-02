@@ -1,0 +1,42 @@
+CLIFF NOTES: Representing Data - Tables and Dimensionality (Module 5)
+
+1. WAYS TO REPRESENT DATA
+- Attribute-value (key-value) pairs: a data point is a collection of attributes,
+  each with a value for one observation. Example: Parthenon -> year_built: 438 BCE.
+- In Python this is a dictionary; a dataset becomes a list of dictionaries.
+- Usual working format is a TABLE (2D): columns = attributes/fields,
+  rows = observations/data points, each cell = value of one attribute for one row.
+- Examples: hospital patients, historical documents, product inventory, transit lines.
+  Same tabular shape, different attributes and data types (strings, integers,
+  even a list inside a cell).
+
+2. STRUCTURING IS A DESIGN CHOICE
+- How you format data - combining columns, deriving new ones, transforming raw
+  source data - is the analyst's call and the "art" of data science.
+- It directly determines what analysis you can do.
+
+3. TWO PYTHON STRUCTURES FOR TABULAR DATA
+- NumPy arrays (this module's focus). Data type is the ndarray (n-dimensional array).
+- pandas DataFrames (later). Builds on NumPy, adds functionality (e.g. keeps headers).
+- NumPy and pandas are packages you import.
+
+4. NUMPY ARRAYS
+- Numbers only: NumPy strips out headers/metadata and treats the numeric data as a
+  matrix, enabling math and linear-algebra operations.
+- Metadata (column/row labels) is where pandas comes in later.
+- Useful for simulation / sampling random numbers, where each row or column is a sample.
+
+5. KEY ATTRIBUTES OF A NUMPY ARRAY
+- ndim (number of dimensions):
+    1D = a list of numbers (single row or column)
+    2D = a table (rows = observations, columns = attributes)
+    3D+ is possible (e.g. tables over time) but out of scope here.
+- Axes are zero-indexed: axis 0 = rows, axis 1 = columns.
+- shape = (number of rows, number of columns). Rows first, columns second -
+  same ordering as the axes. A 2-row, 3-column array has shape (2, 3).
+
+SUMMARY
+Tabular data = rows (observations) x columns (attributes). NumPy holds the numeric
+core as an ndarray; the two attributes to know are ndim (1D list vs 2D table) and
+shape (rows, columns), with axis 0 = rows and axis 1 = columns. pandas comes later
+for labels and richer functionality.
