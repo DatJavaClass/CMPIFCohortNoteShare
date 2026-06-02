@@ -1,0 +1,73 @@
+CLIFF NOTES: Reshaping, Flattening, and Transposing NumPy Arrays (Module 5)
+
+CORE IDEA
+All of these operations change an array's SHAPE without changing the total
+number of elements (.size). They differ in WHETHER the data's reading order is
+preserved. Reshape and reshape-with-(1,n) keep reading order; transpose does not.
+
+1. RESHAPING A 1D ARRAY INTO 2D
+- arr.reshape(rows, columns) re-fences a flat array into a grid.
+- HARD RULE: rows x columns must equal .size. Otherwise -> ValueError
+  ("cannot reshape array of size 12 into shape (3,2)").
+- Reading order is preserved: 0,1,2,3 then 4,5,6,7 ... the pieces never move
+  relative to each other; only the row/column boundaries are redrawn.
+- reshape is a READ, not a MUTATE: it RETURNS a new array and leaves the original
+  alone. You must capture the result:
+    arr = arr.reshape(3, 5)     # keeps it
+    arr.reshape(3, 5)           # result is thrown away; arr is unchanged
+
+2. USING -1 TO AVOID MENTAL MATH
+- Specify one dimension, pass -1 for the other, and NumPy computes it from .size.
+    arr.reshape(2, -1)   # 12 elements -> NumPy fills in 6 columns
+    arr.reshape(5, -1)   # 15 elements -> NumPy fills in 3 columns
+- Only ONE dimension can be -1 (NumPy can solve for one unknown, not two).
+
+3. TRANSPOSING A 2D ARRAY (.T)
+- arr.T flips rows and columns. Shape (rows, cols) -> (cols, rows).
+- THE RULE: every element keeps its two coordinates, but they SWAP:
+  position [row, col] -> position [col, row]. Values never change, addresses do.
+- A whole row becomes a whole column (they used to share a row number; after the
+  swap they share a column number, so the row "stands up" as a column).
+- MENTAL MODEL - it's a FOLD, not a spin. The main diagonal ([0,0],[1,1],[2,2]...)
+  is a hinge that stays put; the two triangular halves fold onto each other.
+  NOT a rotation around the [0,0] corner - the whole diagonal is fixed, not one point.
+- .T is an ATTRIBUTE (no parentheses) and a READ (original is left untouched).
+- RESHAPE vs TRANSPOSE are NOT the same move:
+    reshape(4,3): same reading order, re-fenced     transpose .T: rows<->columns
+    0 1 2                                            0 4 8
+    3 4 5                                            1 5 9
+    6 7 8                                            2 6 10
+    9 10 11                                          3 7 11
+  Both are 4x3, different contents. Reshape keeps the stream; transpose folds it.
+
+4. RESHAPING CAN PRODUCE A 2D ARRAY WITH ONE ROW
+- arr.reshape(1, n) gives shape (1, n): a 2D array with a single row.
+- Tell it's 2D by counting brackets: [[ ... ]] is two levels = 2D.
+- reshape(n, -1) on a (1,n) turns a single row into a single column ((1,10)->(10,1)).
+  This LOOKS like a transpose but is done with reshape; don't conflate the two tools.
+- Useful for matrix operations that require exactly one row or one column.
+
+5. FLATTENING 2D BACK TO 1D
+- .ravel() -> always returns a flat 1D array.
+    WARNING: it returns a VIEW; edits can affect the original. Use .ravel().copy()
+    for an independent copy.
+- .squeeze() -> only removes dimensions of SIZE 1 (e.g. (1,12) -> (12,)).
+    It is NOT a general flattener. squeeze on a (3,4) or (6,2) - no size-1 dim -
+    returns the array UNCHANGED. If you need it truly flat, use .ravel().
+
+COMMON TRAPS (learned the hard way)
+- np.array(15) boxes the single value 15 (0-D). To COUNT 0..14 use np.arange(15).
+- A plain Python list has no .reshape / .T / .squeeze ->
+  "AttributeError: 'list' object has no attribute 'reshape'".
+  Box it first: np.array(my_list_of_lists).
+- Forgetting to assign reshape's result -> the original looks unchanged.
+- Expecting .squeeze() to flatten a shape with no size-1 dimension -> it won't.
+
+SUMMARY
+Reshape re-fences the same data stream into a new rows x columns grid (rows*cols
+must equal .size; use -1 to auto-solve one dimension). Transpose (.T) is a
+different move: it folds the array across its main-diagonal hinge so rows become
+columns ([row,col] -> [col,row]). reshape, .T, .ravel, and .squeeze are all READS
+that return new arrays - capture the result. Flatten with .ravel() (always 1D);
+.squeeze() only drops size-1 dimensions and is not a general flattener. All of
+these need a real NumPy array, so box plain lists with np.array() first.
