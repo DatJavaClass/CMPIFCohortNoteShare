@@ -8,6 +8,7 @@ These are my auto-generated cliff notes, produced in part with my **CMPIF2100 La
 
 The notes are organized by module:
 
+- `Cliff Jumper Notes/` (each module's notes woven into one connected lesson)
 - `Cliff Notes Module 1/`
 - `Cliff Notes Module 2/`
 - `Cliff Notes Module 3/`
