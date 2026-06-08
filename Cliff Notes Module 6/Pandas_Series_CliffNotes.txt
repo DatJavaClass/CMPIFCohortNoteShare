@@ -1,0 +1,44 @@
+PANDAS SERIES — CLIFF NOTES
+Module 6
+
+WHAT PANDAS IS
+- Python package for data analysis; built on top of NumPy but tailored to data.
+- Borrows much of its data functionality from R, but lives inside general-purpose Python.
+- Convention: import pandas as pd
+
+SERIES = 1D DATA
+- pd.Series holds one-dimensional data (think: a labeled list).
+- Create from a Python list (or a NumPy array): pd.Series(my_list)
+- A Series has two parts:
+    - index  — the labels for each element (like dict keys)
+    - values — the actual data, stored as a NumPy ndarray
+
+INDEX BEHAVIOR
+- Default index is a RangeIndex: starts at 0, step 1 (0 through n-1).
+- Access by index label using brackets: grocery_series[5]
+- Negative indexing (e.g. -1) does NOT work in pandas — unlike Python lists / NumPy.
+  You must ask for the actual index label that exists.
+- Indexes are CUSTOMIZABLE: assign your own labels (e.g. "product1".."product6").
+  Custom labels must match the number of elements.
+- Indexes are NOT required to be unique — pandas allows duplicate index labels.
+  Bizarre, and worth avoiding. When unsure, just use the default 0-based range.
+
+.values AND .index
+- series.index  -> the index object (e.g. RangeIndex start=0 stop=6 step=1)
+- series.values -> a NumPy ndarray of the underlying data
+
+CONCATENATION
+- Combine multiple Series with pd.concat([series_a, series_b]).
+- Pass a LIST of the objects to join.
+- If the pieces have different/awkward indexes, the result keeps both index schemes.
+- Use ignore_index=True to discard old indexes and get a fresh 0-based range.
+  (ignore_index is a recurring argument across pandas operations.)
+
+KEY TAKEAWAYS
+- Series = labeled 1D array; index + values.
+- No negative indexing.
+- Custom, non-unique indexes are allowed but use defaults when in doubt.
+- pd.concat(..., ignore_index=True) for clean reindexing after joining.
+
+------------------------------------------------------------------------------
+The contents of this transcript are the exclusive intellectual property of the University of Pittsburgh and intended for personal use only. They are not to be distributed, shared, sold, or otherwise transmitted without the express permission of the University.

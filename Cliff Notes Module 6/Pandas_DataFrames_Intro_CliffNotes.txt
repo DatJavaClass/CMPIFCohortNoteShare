@@ -1,0 +1,35 @@
+PANDAS DATAFRAMES — INTRO — CLIFF NOTES
+Module 6
+
+WHAT A DATAFRAME IS
+- The core structure in pandas: holds an entire table (2D — rows and columns).
+- The usual way you interact with data in pandas.
+- Model: each COLUMN is a variable; each ROW is a data point/observation.
+- A DataFrame is effectively a collection of Series — multiple Series (the columns)
+  put together side by side.
+
+RELATION TO SERIES
+- Series = 1D (covered previously). DataFrame = 2D.
+- The columns of a DataFrame are individual Series sharing a common index.
+
+CONSTRUCTING DATAFRAMES
+- Many ways to build one; you typically call the CONSTRUCTOR.
+- A constructor is the method you call on a type to create an instance of it
+  (here, pd.DataFrame(...)).
+- Can construct from:
+    - a list of lists
+    - a NumPy array (pandas is built on NumPy)
+    - other structures (dicts, Series, etc.)
+- Example data sets used in lecture:
+    - A categorical/non-numeric table (text values — e.g. baseball: city, division).
+      "Categorical" = values fall into named categories (e.g. divisions).
+    - A numeric table (e.g. air quality measurements).
+
+KEY TAKEAWAYS
+- DataFrame = 2D table; columns are variables, rows are observations.
+- Think of it as several aligned Series.
+- Build it with the pd.DataFrame constructor from lists-of-lists, arrays, etc.
+- Data can be categorical (text/non-numeric) or numeric.
+
+------------------------------------------------------------------------------
+The contents of this transcript are the exclusive intellectual property of the University of Pittsburgh and intended for personal use only. They are not to be distributed, shared, sold, or otherwise transmitted without the express permission of the University.

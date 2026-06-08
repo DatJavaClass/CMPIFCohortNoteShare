@@ -1,0 +1,57 @@
+PANDAS DATAFRAME COLUMNS — CLIFF NOTES
+Module 6
+
+WHY COLUMNS MATTER
+- Columns = the attributes/variables of your data; the heart of DataFrame work.
+- Most manipulation is column work: selecting, adding, changing, removing.
+
+SELECTING COLUMNS
+- Bracket notation: df["column_name"]
+    - Name is usually a string (quoted); works for any column name.
+- Dot notation: df.column_name
+    - Faster/cleaner, but FAILS when the name has spaces or special characters.
+    - For those names you MUST use bracket notation.
+- A single column returned -> a pandas Series (1D).
+- A DataFrame is a collection of Series, one per column.
+- df.columns -> lists the column names (useful when you forget them).
+
+SELECTING MULTIPLE COLUMNS
+- Pass a LIST inside the brackets: df[["PM2.5", "PM10"]]
+    - Note the double brackets: outer = selection, inner = the list of names.
+- Selecting multiple columns returns a DataFrame (not a Series).
+- Can build the list of names beforehand and pass it in — cleaner for many columns.
+- Rule of thumb: single column -> Series; multiple columns -> DataFrame.
+
+ADDING COLUMNS
+- Assign to a new bracket key: df["wins"] = [list of values]
+    - Must match the number of rows; aligns positionally.
+    - Can pass a list, NumPy array, or any 1D object. If passing a Series, the
+      index must align — easier to just use a list.
+- Constant-value shortcut: df["season"] = 2022
+    - No list needed; pandas fills the same value into every row.
+
+DELETING COLUMNS — df.drop
+- Syntax: df.drop(columns=["season"])
+- By default drop returns a VIEW/new result and does NOT modify the original.
+  Running the original df afterward shows the column still there.
+- Two correct ways to make it stick:
+    1. Assign to a new DataFrame (recommended):
+         baseball_dropped = df.drop(columns=["season"]).copy()
+       - Keeping the original preserves columns you might need later
+         (more reproducible: raw set vs. processed set).
+       - Calling .copy() avoids "strange behavior" — pandas knows it's a full
+         copy, not a view tied to the original. Good habit when filtering or
+         selecting and reusing the result.
+    2. In-place modification:
+         df.drop(columns=["season"], inplace=True)
+       - Mutates the underlying DataFrame directly; column is truly gone.
+       - Handy when you created a column by mistake and just want it removed.
+
+KEY TAKEAWAYS
+- Bracket vs dot: dot is shorter but breaks on spaces/special chars.
+- Single column = Series; list of columns = DataFrame.
+- Add via assignment; constant value auto-fills all rows.
+- drop doesn't persist unless you reassign (use .copy()) or pass inplace=True.
+
+------------------------------------------------------------------------------
+The contents of this transcript are the exclusive intellectual property of the University of Pittsburgh and intended for personal use only. They are not to be distributed, shared, sold, or otherwise transmitted without the express permission of the University.
