@@ -1,0 +1,134 @@
+CMPINF 2100 - HW6 CLIFF NOTES
+NumPy arrays -> Pandas Series -> Pandas DataFrames
+====================================================
+
+BIG PICTURE
+-----------
+Series = 1D NumPy array + index (labels for each value)
+DataFrame = 2D NumPy array + index (rows) + columns (names)
+Pandas is built on NumPy. Same data underneath; labels on top.
+
+
+1. NUMPY RESHAPE (setup)
+------------------------
+x1D = np.arange(1, 31)        # 1D, values 1..30
+x2Da = x1D.reshape(6, 5)      # 6 rows x 5 cols
+x2Db = x1D.reshape(10, -1)    # -1 = "infer this dim" -> 10 x 3
+
+* reshape fills row by row.
+* -1 only works for one dimension at a time.
+* arr[-1] = last row of a 2D array.
+
+
+2. SERIES BASICS (Problem 1)
+----------------------------
+Create:      s = pd.Series(x2Da[-1])
+Print diff:  NumPy row prints flat: [26 27 28 29 30]
+             Series prints vertical: index on left, value on right,
+             dtype line at bottom.
+
+INDEX:
+* s.index -> RangeIndex(start=0, stop=5, step=1)
+  This is shorthand for labels 0,1,2,3,4 -- the same numbers you
+  see down the left side when you print the Series.
+* Replace it:  s.index = ['a','b','c','d','e']
+  Build letters programmatically:
+  [chr(ord('a') + i) for i in range(len(s))]
+* Subset by label:  s['c']  -> value at label 'c'
+* Last label dynamically:  s[s.index[-1]]
+* Reset to default:  s.reset_index(drop=True, inplace=True)
+  - drop=True: throw away old index instead of keeping it as data
+  - inplace=True: modify s itself instead of returning a copy
+
+
+3. DATAFRAME CREATION (Problem 2)
+---------------------------------
+From 2D array, default names:   df = pd.DataFrame(x2Db)
+  -> columns auto-named 0, 1, 2
+With names:  df = pd.DataFrame(x2Db, columns=['A','B','C'])
+From dict:   df = pd.DataFrame(my_dict)
+  -> keys become column names, values become column data
+  -> a scalar key/value broadcasts? No -- but assigning a scalar
+     to a NEW column does (see Problem 4).
+
+df.info() shows: index type/range, each column's name,
+non-null count, dtype, and total memory usage.
+
+
+4. SELECTING COLUMNS (Problem 3a-3b)
+------------------------------------
+Single column (2 ways):
+  df['B']      # bracket notation -- always works
+  df.B         # attribute notation -- only if name is a valid
+               # Python identifier and not a method name
+Multiple columns (note the DOUBLE brackets -- it's a list inside):
+  df[['A','C']]
+Single col -> Series. List of cols -> DataFrame.
+
+
+5. SELECTING ROWS BY POSITION (Problem 3c, 3e)
+----------------------------------------------
+.iloc = integer position.  .loc = labels.
+  df.iloc[-1]   # last row, all columns
+  df.iloc[0]    # first row
+A single row comes back as a Series; its "Name:" is the row's
+index label.
+
+
+6. SORTING (Problem 3d)
+-----------------------
+df.sort_values('A', ascending=False, ignore_index=True, inplace=True)
+  * ascending=False  -> descending
+  * ignore_index=True -> rebuild index 0..n-1 after sort
+  * inplace=True     -> modify df, return None
+Gotcha: after sorting with ignore_index, the same data can sit at
+a different label. (HW 3f: values identical, Name changed 9 -> 0.)
+
+
+7. DICTS -> DATAFRAMES (Problem 4)
+----------------------------------
+len(some_dict) = number of KEY/VALUE pairs = number of columns
+                 the DataFrame will have.
+df.shape  -> (rows, cols) tuple. Attribute, no parentheses.
+df.dtypes -> dtype per column. Strings show as 'object'.
+Mixed dict -> mixed dtypes (int64 for numeric lists, object for
+string lists).
+
+ADD A COLUMN with a scalar -- it broadcasts to every row:
+  df['Year'] = 2022
+shape goes (12, 9) -> (12, 10).
+
+
+8. FILTERING / BOOLEAN MASKS (Problem 5)
+----------------------------------------
+Single condition:
+  df[df['Home_Score'] > 6]
+The inner expression makes a Series of True/False; outer brackets
+keep rows where True. Filtered rows KEEP their original index
+labels (gaps are normal).
+
+Filter rows AND pick columns in one shot:
+  df.loc[df['Away_Score'] < 3, ['Home_Team','Away_Team','Winning_Team']]
+
+Multiple conditions:
+  df[(df['Home_Score'] > 6) & (df['Winning_Team'] == 'Pirates')]
+  * & not 'and', | not 'or', ~ for not
+  * EACH condition in its own parentheses -- operator precedence
+    will silently wreck you otherwise.
+
+
+QUICK REFERENCE: ATTRIBUTE vs METHOD
+------------------------------------
+Attributes (no parens): .index  .columns  .shape  .dtypes  .iloc  .loc
+Methods (parens):       .info()  .sort_values()  .reset_index()  .head()
+
+
+COMMON TRAPS
+------------
+* df[['A','C']] needs double brackets; df['A','C'] is an error.
+* 'and'/'or' in a mask -> ValueError; use & and |.
+* Forgetting parens around each mask condition -> wrong answer or error.
+* inplace=True returns None -- don't write df = df.sort_values(..., inplace=True).
+* reset_index() without drop=True shoves the old index in as a column.
+* RangeIndex(start=0, stop=5, step=1) just means labels 0,1,2,3,4.
+* int32 vs int64: dtype can differ by OS/source; both are fine here.

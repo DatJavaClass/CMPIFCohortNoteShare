@@ -1,0 +1,53 @@
+FILTERING ROWS IN PANDAS DATAFRAMES — CLIFF NOTES
+Module 6
+
+WHAT FILTERING IS
+- Selecting a SUBSET of rows that meet certain column conditions.
+- Mental model: an if-statement per row — condition True = keep, False = drop.
+- Like querying a database (SQL WHERE) but in pandas.
+
+THE BOOLEAN CONDITION
+- A condition on a column returns a Series of True/False, one per row:
+    baseball_df["wins"] > 65   ->   True, True, False, False, False...
+- Useful to view this boolean Series on its own before filtering with it.
+
+FILTERING WITH .loc
+- .loc takes [rows, columns] (like NumPy).
+- Pass the boolean condition as the row selector:
+    baseball_df.loc[baseball_df["wins"] > 65]
+- Column part is optional:
+    - drop it entirely, or use a colon (:) -> all columns
+    - or pass a LIST to pick specific columns in the result:
+        baseball_df.loc[baseball_df["wins"] > 65, ["city", "team", "wins"]]
+- Works on numeric OR string conditions:
+    baseball_df.loc[baseball_df["team"] == "Brewers"]
+  (result keeps the original row index — cross-reference back to source row.)
+
+MATCHING MULTIPLE VALUES (OR)
+- Pipe | is the OR operator. WRAP EACH condition in parentheses:
+    baseball_df.loc[(baseball_df["team"] == "Brewers") | (baseball_df["team"] == "Cardinals")]
+- Cleaner alternative — .isin() with a list:
+    baseball_df.loc[baseball_df["team"].isin(["Brewers", "Cardinals"])]
+  Same result, much nicer for several possible values.
+
+MATCHING MULTIPLE CONDITIONS (AND)
+- Ampersand & is the AND operator. Each condition in parentheses:
+    baseball_df.loc[(baseball_df["team"] == "Cardinals") & (baseball_df["wins"] > 55)]
+- Row must satisfy BOTH. Powerful for specific attribute combinations.
+
+CRITICAL OPERATOR NOTE
+- Use | and & (NOT Python's "or"/"and") for element-wise filtering.
+- ALWAYS parenthesize each condition — operator precedence will bite you otherwise.
+
+STRING-MATCHING METHODS (.str accessor)
+- == is an EXACT match. For partial/pattern matches use .str methods:
+    .str.contains("pit")   -> any value containing "pit" (e.g. Pittsburgh)
+    .str.startswith("Brew") -> values beginning with "Brew" (e.g. Brewers)
+- Many more string functions exist — check the pandas docs.
+
+KEY TAKEAWAYS
+- Condition -> boolean Series -> feed to .loc to keep matching rows.
+- .loc[rows, cols]: add a column list to trim the output.
+- OR = | , AND = & , each condition wrapped in ().
+- .isin([...]) beats chained | conditions.
+- .str.contains / .str.startswith for partial string matches.
