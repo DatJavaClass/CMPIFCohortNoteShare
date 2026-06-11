@@ -39,6 +39,3 @@ KEY TAKEAWAYS
 - No negative indexing.
 - Custom, non-unique indexes are allowed but use defaults when in doubt.
 - pd.concat(..., ignore_index=True) for clean reindexing after joining.
-
-------------------------------------------------------------------------------
-The contents of this transcript are the exclusive intellectual property of the University of Pittsburgh and intended for personal use only. They are not to be distributed, shared, sold, or otherwise transmitted without the express permission of the University.

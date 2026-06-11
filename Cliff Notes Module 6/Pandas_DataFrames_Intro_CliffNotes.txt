@@ -30,6 +30,3 @@ KEY TAKEAWAYS
 - Think of it as several aligned Series.
 - Build it with the pd.DataFrame constructor from lists-of-lists, arrays, etc.
 - Data can be categorical (text/non-numeric) or numeric.
-
-------------------------------------------------------------------------------
-The contents of this transcript are the exclusive intellectual property of the University of Pittsburgh and intended for personal use only. They are not to be distributed, shared, sold, or otherwise transmitted without the express permission of the University.

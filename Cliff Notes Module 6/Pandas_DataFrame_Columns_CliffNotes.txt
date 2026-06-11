@@ -52,6 +52,3 @@ KEY TAKEAWAYS
 - Single column = Series; list of columns = DataFrame.
 - Add via assignment; constant value auto-fills all rows.
 - drop doesn't persist unless you reassign (use .copy()) or pass inplace=True.
-
-------------------------------------------------------------------------------
-The contents of this transcript are the exclusive intellectual property of the University of Pittsburgh and intended for personal use only. They are not to be distributed, shared, sold, or otherwise transmitted without the express permission of the University.

@@ -1,0 +1,71 @@
+VISUALIZING RANDOM NUMBER GENERATION WITH PANDAS — CLIFF NOTES
+Module 6 (notebook, no paired lecture)
+
+PURPOSE
+- Simulate repeated samples from a uniform distribution, compute per-replication
+  means, and visualize how the spread of those means shrinks as sample size grows.
+- Demonstrates WHY larger samples give more stable estimates (smaller standard
+  error of the mean).
+
+SETUP
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+GENERATING RANDOM DATA (NumPy)
+- Seed a generator for reproducibility: rg = np.random.default_rng(2100)
+- Draw a 2D array of uniform [0,1) values: rg.random((25, 7))
+    - Shape (25, 7) = 25 replications (rows) x 7 data points each (columns).
+- Inspect with slicing (random_arr[:5, :]) and .shape.
+
+NUMPY ARRAY -> DATAFRAME
+- pd.DataFrame(random_arr) wraps the array; each ROW = one replication.
+- Default integer column names (0..6) and a RangeIndex.
+- Useful inspectors:
+    df.info()  -> dtypes, non-null counts, memory
+    df.head()  -> first 5 rows
+
+PER-REPLICATION MEAN — THE axis ARGUMENT (KEY CONCEPT)
+- df.mean(axis=1) averages ACROSS COLUMNS -> one mean PER ROW (per replication).
+    - axis=1 = collapse columns (row-wise result).
+    - axis=0 (default) would average down each column instead.
+- Result is a pandas Series.
+
+SERIES -> DATAFRAME + ID COLUMN (for plotting)
+- Wrap the Series and name the column:
+    rep_means = pd.DataFrame(rep_means, columns=['rep_mean'])
+- Turn the index into a real column with a clean name:
+    rep_means = rep_means.reset_index().rename(columns={'index': 'replication'})
+    - reset_index() moves the index into a column and adds a fresh 0-based index.
+    - rename(columns={...}) relabels it to "replication" (an explicit ID column).
+
+PLOTTING WITH PANDAS
+- Quick scatter straight off a DataFrame:
+    rep_means.plot.scatter(x='replication', y='rep_mean')
+- Small sample (n=7): means scatter widely, no pattern — high variability.
+
+SMALL VS LARGE SAMPLE COMPARISON (the payoff)
+- Build a large-sample set: rg.random((25, 500)) -> 500 points per replication.
+- Compute its row means (axis=1), wrap to a DataFrame with reset_index/rename.
+- Add the small-sample means as a second column by alignment:
+    rep_means_all['rep_mean7'] = rep_means['rep_mean']
+    (assignment aligns on the shared index.)
+- Overlay both on one Axes:
+    fig, ax = plt.subplots()
+    rep_means_all.plot.scatter(x='replication', y='rep_mean7',   color='blue', ax=ax)
+    rep_means_all.plot.scatter(x='replication', y='rep_mean500', color='red',  ax=ax)
+    ax.set_ylabel('Means'); plt.show()
+    - Passing the SAME ax to both .plot.scatter calls overlays them.
+
+KEY TAKEAWAY
+- n=500 means (red) cluster tightly around ~0.5; n=7 means (blue) scatter broadly.
+- Larger sample size -> less variability in the sample mean -> smaller standard
+  error of the mean. (The uniform[0,1) population mean is 0.5, which the large
+  samples hug closely.)
+
+PANDAS SKILLS REINFORCED
+- pd.DataFrame() constructor from a NumPy array.
+- .mean(axis=1) for row-wise aggregation (axis direction is the crux).
+- .reset_index() + .rename(columns=...) to manufacture an ID column.
+- Column assignment with index alignment.
+- .plot.scatter() and shared-Axes overlays for quick visualization.
