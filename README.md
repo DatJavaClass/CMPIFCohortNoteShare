@@ -16,6 +16,12 @@ The notes are organized by module:
 - `Cliff Notes Module 5/`
 - `Cliff Notes Module 6/`
 
+## Trainers
+
+Per-subject documents that focus on a single topic in depth, rather than following the course module by module. See the folder's README for details.
+
+- `Trainers/`
+
 ## Sandbox
 
 Also included is **`Sandbox.ipynb`** — an entirely blank-slate Jupyter notebook I use as "scratch paper" while working through assignments. Feel free to use it the same way.
