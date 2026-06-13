@@ -3,6 +3,7 @@
 
 # Except these
 !.gitignore
+!.gitattributes
 !LICENSE
 !README.md
 !Sandbox.ipynb
@@ -13,3 +14,4 @@
 !/Cliff Notes Module 5/
 !/Cliff Notes Module 6/
 !/Cliff Jumper Notes/
+!/Trainers/
