@@ -1,0 +1,90 @@
+SUMMARY STATISTICS ACROSS A DATAFRAME — CLIFF NOTES
+Module 7
+
+BIG PICTURE
+- Same stats as the Series notebook, now run on a WHOLE DataFrame at once.
+- Two axes of thinking:
+    - COLUMN-WISE (default, axis=0): one number per column ("how did each test go?").
+    - ROW-WISE (axis=1): one number per row ("how did each student/driver do?").
+- Two complications that don't exist for a single clean Series:
+    1. Mixed data types -> need numeric_only=True (or select_dtypes) so text
+       columns don't break the math.
+    2. Custom logic -> use .map() (one-to-one per element) or .apply() (whole
+       row/column at once).
+
+COLUMN-WISE STATS: df.mean(), df.std(), df.sem()
+- By default these compute DOWN each column (axis=0) and return a Series indexed
+  by column name.
+- df.mean() on a frame with a STRING column (student) raises a TypeError —
+  pandas can't average text. Fix: df.mean(numeric_only=True) to skip non-numeric
+  columns.
+    - NOTE: the lab's markdown calls it the "name" column, but the actual column
+      is named "student". Same lesson; just don't get tripped up by the mismatch.
+- BOOLEANS COUNT AS NUMBERS: the pass column (True/True/True/False) averages to
+  0.75 (True=1, False=0). So mean(numeric_only=True) INCLUDES bool columns.
+
+STD AND SEM ON THIN COLUMNS (the n=1 -> NaN lesson)
+- df.std(numeric_only=True): score_3 -> NaN. score_3 has only ONE non-NaN value
+  (just Darryl's 66). Sample std uses (n-1) in the denominator; with n=1 that's
+  division by zero, so pandas returns NaN. Other columns compute fine.
+- df.sem(numeric_only=True): SEM = std / sqrt(n) (Standard Error of the Mean).
+  score_3 is NaN for the same reason. Missing values are ignored when counting n.
+- Reused fact from the Series notes: pandas std/sem use ddof=1 (sample), which is
+  exactly why a single-value column can't get a spread.
+
+select_dtypes('number') vs numeric_only=True — A SUBTLE DIFFERENCE
+- numeric_df = df.select_dtypes('number') pulls only numeric-typed columns into a
+  new DataFrame before you compute anything.
+- GOTCHA worth memorizing: select_dtypes('number') EXCLUDES bool — numeric_df
+  here is score_1, score_2, score_3, attempts (NO pass column). But
+  mean(numeric_only=True) INCLUDED pass (-> 0.75). So the two "numeric" filters
+  disagree on booleans: select_dtypes('number') drops them, numeric_only keeps
+  them. Don't assume they're interchangeable.
+
+ROW-WISE STATS: axis=1
+- df_2.mean(axis=1) averages ACROSS the columns for each row -> one value per
+  driver (e.g. Lando = mean of 1, 5, NaN = 3.0; NaN dropped, so it's 6/2 not 6/3).
+- Rule of thumb: axis=0 collapses rows (answer per column); axis=1 collapses
+  columns (answer per row). Picture the axis you're squashing.
+
+.map() — ONE-TO-ONE TRANSFORM OF A COLUMN OR INDEX
+- Series/Index method. Feeds EACH element through a function, dict, or Series and
+  returns the transformed column. Strictly element-by-element (one in, one out).
+- Dict form: df_2.index.map(team_map) looks up each index label in team_map and
+  returns the mapped team. (Here it maps the INDEX, since drivers are the index.)
+- Function form: df_2.Team.map(append_abbreviation) passes each team STRING to a
+  custom function. append_abbreviation collects the capital letters and tacks on
+  an acronym -> "Red Bull Racing (RBR)", "Mercedes (M)", etc.
+    - "".join(list) glues a list of characters into one string.
+- .map() canNOT see other columns in the row — it only ever sees one value.
+
+.apply() — WHOLE ROW OR COLUMN AT ONCE
+- DataFrame method. Passes an entire row (axis=1) or entire column (axis=0) to
+  your function as a Series, so the function CAN use multiple values together —
+  the thing .map() can't do.
+- df_2.select_dtypes("number").apply(count_races, axis=1) gives each driver's
+  finished-race count (non-NaN count per row): 3, 3, 3, 2.
+- AXIS WORDING — read carefully: axis=1 means the function receives each ROW and
+  you get ONE result PER ROW (per driver). (The lab's phrase "a value returned
+  for each column" is misleading — axis=1 produces a value per row.)
+- map vs apply, the clean split:
+    - .map()   -> one column/index, element-by-element, accepts func OR dict OR Series.
+    - .apply() -> whole row/column, can combine multiple values, function only.
+
+PRACTICE QUESTION (count races each driver did NOT finish = NaNs per row)
+- Cleanest answer, no custom function needed:
+      df_3.isna().sum(axis=1)
+  -> Max 0, Lewis 1, Fernando 1, Lando 2.
+- Apply-style equivalent (mirrors the lab's count_races pattern):
+      df_3.apply(lambda row: row.isna().sum(), axis=1)
+- Both use axis=1 so the count is per DRIVER (row). isna() flags missing, .sum()
+  counts the Trues.
+
+KEY TAKEAWAYS
+- df.mean/std/sem default to column-wise (axis=0); axis=1 makes them row-wise.
+- Mixed types -> numeric_only=True or pandas raises a TypeError on text columns.
+- Booleans are numeric to mean() (pass -> 0.75) but select_dtypes('number') DROPS bool.
+- ddof=1 (sample) means a single-value column (score_3) gives NaN for std and sem.
+- .map() = element-wise on ONE column/index (func/dict/Series); can't see other columns.
+- .apply() = whole row/column at once (func only); use it when logic needs several values.
+- DNF count = df.isna().sum(axis=1) — flag missing, sum across the row.

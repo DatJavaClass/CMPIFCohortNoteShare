@@ -15,6 +15,7 @@ The notes are organized by module:
 - `Cliff Notes Module 4/`
 - `Cliff Notes Module 5/`
 - `Cliff Notes Module 6/`
+- `Cliff Notes Module 7/`
 
 ## Trainers
 

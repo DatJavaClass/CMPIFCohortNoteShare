@@ -1,0 +1,108 @@
+PANDAS CONCATENATION (pd.concat) — CLIFF NOTES
+Module 7
+
+BIG PICTURE
+- pd.concat glues DataFrames together — vertically (stack rows) or horizontally (stack columns).
+- The ONE rule that explains almost everything: UNION THE LABELS, FILL EVERY GAP WITH NaN.
+    - Vertical: union the COLUMN names; rows missing a column get NaN.
+    - Horizontal: union the INDEX (row) labels; positions missing a value get NaN.
+
+VERTICAL CONCATENATION (default, axis=0)
+- pd.concat([df_a, df_b]) stacks row-wise by default — no axis argument needed.
+- The original index is PRESERVED, so index labels can repeat (0,1,2,0,1,2).
+    - Fix with ignore_index=True -> renumbers cleanly 0..n.
+- Columns are aligned BY NAME, not by position. concat builds the union of all
+  column names across every DataFrame, then drops each row into that shared layout.
+
+MISMATCHED COLUMNS -> NaN (the "extra column" lesson)
+- Example: df_c has columns id, value, extra; df_a has only id, value.
+- Result of pd.concat([df_c, df_a]):
+    - df_c's rows fill extra with 10,20,30.
+    - df_a's rows have NOTHING to offer for extra -> filled with NaN.
+- So a unique column is "created on behalf of" the DataFrame that owns it, and
+  extended over everyone else's rows as NaN. df_a did NOT gain real data — just a placeholder.
+- RULE: a column appears in the result if ANY DataFrame has it; every row that
+  didn't supply a value for that column gets NaN.
+
+THREE-WAY CONCAT = MIRROR IMAGE (each unique column is an island)
+- HYPOTHETICAL (not an actual lab cell — the notebook's df_d owns a "score" column
+  and there is no 3-way concat): imagine df_c owns "extra" and a third df_z owns
+  "bonus", then pd.concat([df_c, df_a, df_z]):
+    - extra  -> filled ONLY for df_c's rows; NaN for df_a AND df_z.
+    - bonus  -> filled ONLY for df_z's rows; NaN for df_c AND df_a.
+- The null region for a unique column covers EVERY other DataFrame that lacked it,
+  not just the one right before it. (9 rows total -> 6 leading NaNs for a column
+  only the last DataFrame brought.)
+
+WHY DO MY INTEGERS TURN INTO 10.0 (FLOATS)?
+- NaN is technically a FLOATING-POINT value.
+- A pandas column holds ONE dtype. The moment NaN lands in an int column, the
+  whole column must upcast to float64 -> 10 displays as 10.0.
+- This is a side effect of the NaN fill, NOT something you did wrong.
+
+DTYPES ARE PER-COLUMN (don't confuse "object" with the float thing)
+- A DataFrame stores a separate dtype for EACH column, not one type overall.
+- After concat of the example:
+    - id    -> int64   (whole numbers, no NaN)
+    - value -> object  (this is just how pandas stores TEXT/strings)
+    - extra -> float64 (got NaN -> upcast from int)
+- "object" = the string column (value). "float64" = the NaN-affected column (extra).
+  Two different columns, two different reasons. Don't conflate them.
+- Inspect with: pd.concat([...]).dtypes
+
+HORIZONTAL CONCATENATION (axis=1)
+- pd.concat([df_a, df_d], axis=1) glues columns side-by-side.
+- Aligned BY INDEX (row labels), the mirror of how vertical aligns by column name.
+- Row mismatch (one df has more rows) -> the short side is filled with NaN
+  for the extra rows. Same union-and-fill rule, just on the index instead.
+
+DUPLICATE COLUMN NAMES (and why the lab example is weak)
+- Horizontal concat of df_a (id,value) + df_f (id,value) -> TWO id columns and
+  TWO value columns. Confusing and ambiguous.
+- Lab's fix: rename one side BEFORE concatenating so names are unique.
+- CRITIQUE / context worth remembering:
+    - The section is titled "Handling" duplicates but actually shows how to
+      PREVENT/avoid creating them (rename up front), not how to resolve a
+      DataFrame that ALREADY has duplicate columns (that'd need .iloc by
+      position, or the keys= argument to namespace them).
+    - The lab DOES render both results (the duplicate-name concat and the renamed
+      concat), so the before/after contrast is visible — but it only models
+      PREVENTION (rename up front), not resolving columns that are ALREADY duplicated.
+
+.rename() MECHANICS (the renaming tool)
+- Syntax: df_f_renamed = df_f.rename(columns={"id": "extra_id", "value": "grade"})
+- The dict is {OLD_name: NEW_name} pairs. Left of the colon = current name;
+  right of the colon = what it becomes. Read flat: old, new, old, new...
+- columns= renames COLUMN labels. There's a parallel index= for ROW labels (same {old:new} idea).
+- Returns a NEW DataFrame (that's why you assign it). Original df_f is untouched
+  unless you pass inplace=True.
+- Only list the columns you're changing — unlisted columns are left alone.
+- ORDER OF PAIRS DOESN'T MATTER: pandas matches by looking up each OLD name, not
+  by position. {"id":"extra_id","value":"grade"} == {"value":"grade","id":"extra_id"}.
+  Renamed columns also STAY in their original positions — reordering the dict
+  does not reorder the columns.
+- GOTCHA: a key (old name) that doesn't exist is SILENTLY IGNORED by default —
+  a typo like {"idd":"extra_id"} renames nothing and raises no error.
+
+LABEL MANIPULATION vs DATA MANIPULATION (the key mental lens)
+- .rename() is essentially STRING manipulation — it only changes the HEADER text.
+  It never reads, moves, or alters the actual values. Relabel the box; the
+  contents (e.g. [8,9,10]) are untouched.
+- The duplicate-column problem was never a DATA problem — the numbers lined up
+  fine. It was a LABEL collision (two columns sharing a name). So the right fix
+  is a LABEL tool (.rename()), not a data tool. String fix for a string problem.
+- Pandas operations split roughly into two camps:
+    - LABEL ops (header/index relabeling): .rename(), df.columns=[...],
+      .set_index(), .reset_index().
+    - DATA ops (actually reshape/combine/compute values): .concat(), .merge(),
+      .groupby(), .fillna(), filtering.
+
+KEY TAKEAWAYS
+- One rule: UNION THE LABELS, FILL GAPS WITH NaN (columns for vertical, index for horizontal).
+- Vertical = default; index repeats unless ignore_index=True.
+- A unique column exists if ANY df has it; every other df's rows get NaN there.
+- NaN forces an int column to float (10 -> 10.0); dtype is PER COLUMN.
+- "object" dtype just means a text column — separate issue from the NaN/float upcast.
+- Horizontal (axis=1) aligns by index; row mismatch fills NaN; watch for duplicate names.
+- .rename(columns={old:new}) is label/string work — order-independent, returns a
+  new df, silently ignores unknown keys. It prevents duplicate names rather than fixing existing ones.
