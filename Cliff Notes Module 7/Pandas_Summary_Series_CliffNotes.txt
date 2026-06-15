@@ -1,0 +1,85 @@
+SUMMARY STATISTICS OF A COLUMN (Series) — CLIFF NOTES
+Module 7
+
+BIG PICTURE
+- A DataFrame COLUMN is a 1D Series. Summary stats are usually computed one
+  column at a time, so "column statistics" really means "Series statistics."
+- Two flavors of summary, matched to the data type:
+    - NUMERIC columns -> center & spread: .mean(), .min(), .max(), .std().
+    - CATEGORICAL/text columns -> counts & variety: .nunique(), .unique(),
+      .value_counts().
+- This is the core of Exploratory Data Analysis (EDA): learn typical values,
+  spread, category frequencies, and data-quality smells before deeper analysis.
+
+SELECTING A COLUMN -> YOU GET A SERIES
+- df["age"] returns a Series (NOT a one-column DataFrame). type(...) ->
+  pandas.core.series.Series.
+- A Series prints with the index on the left, the values on the right, plus a
+  Name (the column name) and a dtype footer (e.g. dtype: int64).
+- Single brackets df["age"] = Series; double brackets df[["age"]] = DataFrame.
+  (The lab uses single brackets, so everything here is Series behavior.)
+
+NUMERIC: MEAN / MIN / MAX
+- age = [21, 22, 21, 23, 22, 21]
+- .mean() -> 21.6666666666...  (the average; full float precision shown)
+- .min()  -> 21
+- .max()  -> 23
+- These ignore NaN by default (not relevant here — no missing values — but worth
+  banking for the EDA notebook).
+
+STANDARD DEVIATION — THE ddof TRAP (pandas vs NumPy)
+- age_series.std() -> 0.816496580927726
+- Pandas .std() defaults to ddof=1: it divides by (n - 1), giving the SAMPLE
+  standard deviation. NumPy's np.std() defaults to ddof=0 (divides by n), the
+  POPULATION standard deviation. Same data, different number.
+- So in pandas you usually DON'T need to pass ddof= — the statistics-friendly
+  (n-1) behavior is already the default. In NumPy you often must set ddof=1 to
+  match it.
+- Precision nit (true but not test-critical): ddof=1 gives the unbiased estimator
+  of the VARIANCE. Taking its square root for the std reintroduces a small bias,
+  so "unbiased std" is loose shorthand. For this course, the takeaway is simply:
+  pandas std = sample std (n-1) by default.
+
+CATEGORICAL: COUNTING UNIQUE VALUES
+- .nunique() -> the NUMBER of distinct values. df["major"].nunique() -> 3.
+- .unique()  -> the ACTUAL distinct values, as a NumPy array:
+  array(['CS', 'DS', 'Math'], dtype=object). Note: array, not a list, and in
+  order of first appearance (not sorted).
+- nunique() = "how many?"; unique() = "which ones?"
+
+.size vs .nunique() (total rows vs distinct values)
+- .size      -> total number of elements (rows) in the column. major.size -> 6.
+- .nunique() -> number of DISTINCT values. major.nunique() -> 3.
+- They diverge exactly when values repeat. Equal size and nunique would mean
+  every value is unique (e.g. an ID column).
+- Caution: .nunique() EXCLUDES NaN by default; .size COUNTS every slot including
+  NaN. So with missing data they can differ for a second reason too.
+
+VALUE_COUNTS — THE WORKHORSE
+- df["major"].value_counts() -> how many rows fall in each category:
+      CS    3
+      DS    2
+      Math  1
+- Returned as a Series: the index is the unique values, the values are the
+  counts, and it is SORTED BY COUNT, descending, by default.
+- Footer reads Name: count, dtype: int64 (the counts are integers).
+- Relationship to siblings (all assuming no NaN, since value_counts and nunique
+  both drop NaN by default): the NUMBER of rows in value_counts() == .nunique();
+  the SUM of its values == .size. Pass dropna=False to value_counts to include a
+  NaN row — then both equalities can break.
+
+MENTAL MODEL — PICK THE STAT TO MATCH THE DTYPE
+- Numbers -> mean/min/max/std describe a distribution (center + spread).
+- Categories/strings -> mean is meaningless; you want HOW MANY distinct values
+  (nunique), WHICH ones (unique), and HOW OFTEN each occurs (value_counts).
+- Choosing the wrong tool for the dtype is the classic beginner mistake.
+
+KEY TAKEAWAYS
+- One column = one Series; df["col"] returns a Series (double brackets -> DataFrame).
+- Numeric summary: .mean(), .min(), .max(), .std(). NaNs ignored by default.
+- pandas .std() uses ddof=1 (sample, n-1); NumPy defaults to ddof=0 (population, n).
+- .nunique() = how many distinct (excludes NaN); .unique() = which ones (NumPy array).
+- .size = total rows (incl. NaN) vs .nunique() = distinct; they split when values repeat.
+- .value_counts() = count per category, sorted high->low; rows = nunique, sum = size.
+- Match the statistic to the data type: distribution stats for numbers, count
+  stats for categories.

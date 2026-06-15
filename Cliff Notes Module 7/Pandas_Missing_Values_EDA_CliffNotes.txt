@@ -1,0 +1,106 @@
+MISSING VALUES & ESSENTIAL EDA — CLIFF NOTES
+Module 7
+
+BIG PICTURE
+- Two jobs in one notebook:
+    1. FIND and quantify missing data (NaN), then decide whether to DROP it.
+    2. Run the "first look" EDA you do on basically every dataset: shape, column
+       names, dtypes, unique counts, missing counts, and distribution stats.
+- The running example is a tiny F1 points table (drivers as the INDEX, races as
+  columns) with deliberate NaNs; the notebook ends on the real Titanic dataset.
+
+IDENTIFYING MISSING VALUES — .isna() / .isnull()
+- df.col.isna() and df.col.isnull() are IDENTICAL (isnull is just an alias).
+  Both return a Boolean Series: True = missing, False = present.
+- "Missing" covers NaN (missing number), None (missing object), and NaT
+  ("not a time", missing datetime).
+
+COUNTING MISSING VALUES (the .isna() + aggregate combo)
+- df['col'].isna().sum() -> count of missing in ONE column (True counts as 1).
+  race_3 -> 1.
+- df.isna().sum() -> missing count for EVERY column at once:
+      race_1 -> 1, race_2 -> 2, race_3 -> 1.
+- df.isna().mean() -> PROPORTION missing per column (mean of 0/1 flags):
+      race_1 -> 0.25, race_2 -> 0.50, race_3 -> 0.25.
+- Trick to bank: the average of a Boolean (True=1/False=0) column IS the fraction
+  that are True. That's why .mean() gives the missing rate.
+- Version note: newer pandas may print np.int64(1) instead of 1 — same value,
+  just showing the dtype wrapper. Not an error.
+
+DROPPING MISSING VALUES — .dropna()
+- df.dropna() drops every ROW with AT LEAST ONE NaN -> keeps only COMPLETE CASES
+  (rows where all columns have a value). Here only Max Verstappen survives.
+- Returns a NEW DataFrame; the original is unchanged unless you pass inplace=True.
+- axis controls rows vs columns:
+    - axis=0 (default) -> drop offending ROWS.
+    - axis=1 -> drop offending COLUMNS. In this data EVERY column has a NaN, so
+      axis=1 wipes out all columns -> an empty DataFrame (index/rows remain, zero
+      columns).
+- subset=[cols] -> only judge missingness in those columns. dropna(subset=
+  ['race_2']) keeps a row as long as race_2 is present, even if other columns are
+  NaN -> keeps Max and Lewis.
+- how= sets strictness:
+    - how='any' (default) -> drop if ANY value in the row/column is missing.
+    - how='all' -> drop only if ALL values are missing. dropna(how='all') here
+      deletes NOTHING, because every row has at least one non-null value.
+
+ESSENTIAL EDA — THE "FIRST LOOK" CHECKLIST
+Before deeper work, know: row count, column names, each column's dtype, unique
+values per column, and missing values per column. These drive how you clean and
+whether to treat a numeric column as categorical.
+
+.info() — EVERYTHING AT A GLANCE
+- df.info() prints: the index range/type, number of entries (rows), each column's
+  name, its NON-NULL count, its dtype, plus memory usage.
+- The catch: it gives NON-null counts, so spotting missing values takes mental
+  subtraction (total rows - non-null). That's why df.isna().sum() is the more
+  direct tool for missing counts.
+
+COLUMN NAMES & DTYPES
+- df.columns -> an Index of column labels (Index([...], dtype='object')).
+- df.columns.tolist() -> the same names as a plain Python list (often handier).
+- df.dtypes -> the data type of each column as a Series.
+
+UNIQUE VALUES PER COLUMN — .nunique()
+- df.nunique() -> distinct values per column. By DEFAULT NaN is NOT counted.
+    - For this frame the default is race_1=3, race_2=2, race_3=3.
+- df.nunique(dropna=False) -> counts NaN as its own distinct value -> race_1=4,
+  race_2=3, race_3=4 (each gains 1 where a NaN exists).
+- Why care: a numeric column with very few unique values (e.g. pclass = 1/2/3) is
+  often better treated as CATEGORICAL than continuous.
+
+DESCRIPTIVE STATISTICS — .describe()
+- df.describe() (numeric, default) returns per numeric column: count, mean, std,
+  min, 25% (Q1), 50% (median), 75% (Q3), max.
+    - count is the NON-missing count, so columns with NaN show a smaller count
+      (race_2 count = 2).
+- df.describe(include='object') switches to CATEGORICAL summaries:
+    - count (non-null rows), unique (distinct values), top (most frequent value),
+      freq (the top value's count).
+    - Tie-breaking: when every value appears once (the teams column), pandas just
+      reports the FIRST one as top (Red Bull), freq=1. "Top" on an all-unique
+      column is arbitrary, not meaningful.
+
+REALISTIC EXAMPLE — TITANIC (seaborn)
+- titanic = sns.load_dataset('titanic'); .info() -> 891 rows x 15 columns, mixed
+  dtypes (int, float, object, bool, category).
+- titanic.isna().sum() surfaces the real-world gaps: age missing 177, deck missing
+  688 (mostly empty!), embarked & embark_town missing 2 each; everything else 0.
+- titanic.nunique() shows which columns behave categorically: survived 2, sex 2,
+  pclass 3 — few values -> treat as categories; age 88, fare 248 -> truly continuous.
+- titanic['pclass'].value_counts() -> 3rd class 491, 1st 216, 2nd 184 (counts per
+  category, sorted high->low).
+- titanic.describe() -> distribution stats for the continuous columns (e.g. mean
+  age 29.70, max fare 512.33). Less useful for few-value columns like pclass —
+  there, value_counts / top is more informative than a mean.
+
+KEY TAKEAWAYS
+- .isna()/.isnull() (aliases) flag missing as Booleans; covers NaN, None, NaT.
+- .isna().sum() = count missing per column; .isna().mean() = proportion missing.
+- .dropna() keeps complete cases, returns a NEW df; axis=1 drops columns,
+  subset= limits which columns judge, how='all' only drops fully-empty rows/cols.
+- First-look EDA: .info() (rows/dtypes/non-null), .columns(.tolist()), .dtypes,
+  .nunique() (NaN excluded unless dropna=False).
+- .describe() = numeric distribution (count/mean/std/min/quartiles/max);
+  include='object' = categorical (count/unique/top/freq), top is arbitrary on ties.
+- Few unique values in a numeric column -> consider treating it as categorical.
