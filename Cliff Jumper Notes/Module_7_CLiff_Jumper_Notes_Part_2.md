@@ -211,9 +211,7 @@ Loaded from seaborn (`sns.load_dataset('titanic')`): **891 rows × 15 columns**.
 - **Group sizes (sanity check):** `groupby('pclass')['survived'].count()` → **1st = 216,
   2nd = 184, 3rd = 491.** Most passengers rode in 3rd class; the **fewest were in 2nd class**
   (184 < 216). *(`value_counts()` gives the same counts faster, but the groupby shows the
-  pattern.)* ⚠️ **Exam note:** the official course intro note says "fewest in 1st" — that's a
-  slip; the counts above make 2nd the smallest. If a quiz is keyed to the source material,
-  answer per your course key.
+  pattern.)*
 - **Survival rate by class:** `groupby('pclass')['survived'].mean()` → **1st ≈ 0.63,
   2nd ≈ 0.47, 3rd ≈ 0.24.** Clear stratification — survival tracked with class/ticket price.
 - **Keeping missing keys:** `groupby('embark_town', dropna=False)['survived'].mean()` adds a

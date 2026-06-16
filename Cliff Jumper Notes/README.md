@@ -45,7 +45,7 @@ versus concept and advice (checked against the source).
 | 5 | Very High (~96%) | About 50 code checks all passed, SEM verified bit for bit, two source errors caught and fixed |
 | 6 | Very High (~97%) | Every code block and number run on pandas 3.0.3; two version-drift fixes (string dtype, Copy-on-Write) verified; a missing plot import and one overreaching claim caught |
 | 7 (Part 1) | High (~94%) | Passed full Diamond QC (independent source and technical audits plus meta-review) |
-| 7 (Part 2) | Very High (~96%) | Every number and code block run on pandas 2.3.3 (groupby/agg/sem, Titanic survival); full Diamond QC found no factual or execution errors; one source slip corrected ("fewest in 1st"→2nd) with an exam-safety note, and the `.sem()` √n basis disambiguated to non-null count |
+| 7 (Part 2) | Very High (~96%) | Every number and code block run on pandas 2.3.3 (groupby/agg/sem, Titanic survival); full Diamond QC found no factual or execution errors; one source slip corrected ("fewest in 1st"→2nd), and the `.sem()` √n basis disambiguated to non-null count |
 
 ## A note of caution
 
