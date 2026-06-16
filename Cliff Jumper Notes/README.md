@@ -11,7 +11,7 @@ and builds on it. Where it helps, a small amount of extra explanation or
 example is added, but only when it is correct.
 
 There is one note per module (Modules 1 through 7; Module 7 is split into
-parts, with Part 1 here).
+parts, with Parts 1 and 2 here).
 
 ## How they are checked: "Who Watches the Watchmen"
 
@@ -44,7 +44,8 @@ versus concept and advice (checked against the source).
 | 4 | High (~95%) | Every number confirmed by simulation, CI coverage tested at 200k trials, adversarial review |
 | 5 | Very High (~96%) | About 50 code checks all passed, SEM verified bit for bit, two source errors caught and fixed |
 | 6 | Very High (~97%) | Every code block and number run on pandas 3.0.3; two version-drift fixes (string dtype, Copy-on-Write) verified; a missing plot import and one overreaching claim caught |
-| 7 (Part 1) | High (~94%) | Passed full Diamond QC (independent source and technical audits plus meta-review); Part 2 pending |
+| 7 (Part 1) | High (~94%) | Passed full Diamond QC (independent source and technical audits plus meta-review) |
+| 7 (Part 2) | Very High (~96%) | Every number and code block run on pandas 2.3.3 (groupby/agg/sem, Titanic survival); full Diamond QC found no factual or execution errors; one source slip corrected ("fewest in 1st"→2nd) with an exam-safety note, and the `.sem()` √n basis disambiguated to non-null count |
 
 ## A note of caution
 
