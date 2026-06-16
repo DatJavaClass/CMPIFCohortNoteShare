@@ -24,7 +24,7 @@ Does split-apply-combine in one line, no explicit loop needed.
 `titanic['survived'].describe()` — since `survived` is 0/1, the mean *is* the survival rate (~38%, with high standard deviation, motivating a breakdown by group).
 
 **Count per group (sanity check on group sizes):**
-`titanic.groupby('pclass')['survived'].count()` — most passengers in 3rd class, fewest in 1st. (`value_counts()` gives the same info faster, but this shows the pattern.)
+`titanic.groupby('pclass')['survived'].count()` — most passengers in 3rd class, fewest in 2nd (1st=216, 2nd=184, 3rd=491). (`value_counts()` gives the same info faster, but this shows the pattern.)
 
 **Survival rate by passenger class:**
 `titanic.groupby('pclass')['survived'].mean()` — clear stratification: 1st class ~63%, 2nd lower, 3rd lowest. Survival tracked with ticket price/class.
