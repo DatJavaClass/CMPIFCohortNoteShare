@@ -1,0 +1,44 @@
+# Intro to Grouping & Aggregation — Cliff Notes
+
+## Core concept: Split-Apply-Combine
+Grouping aggregation breaks a dataset into groups (rows sharing a value for some attribute, usually a categorical variable), applies a function to each group, then combines results. Also called the split-apply-combine method. Strong tool for exploratory data analysis.
+
+Three steps:
+1. **Split** — partition rows into groups by a shared value (e.g., tree species, turtle species).
+2. **Apply** — run a function (typically a summary statistic: sum, mean, std) separately on each group.
+3. **Combine** — assemble per-group results into an output. Output has a different shape than the input: one row per group.
+
+## pandas `groupby`
+Does split-apply-combine in one line, no explicit loop needed.
+
+**Syntax:** `dataframe.groupby(<grouping_column>)[<target_column>].<function>()`
+- Grouping column: usually categorical (what you split on).
+- Target column: optional — restrict to the column(s) you care about; pass a list for multiple. Without it, the function applies across all other columns.
+- Function: the aggregation (e.g., `.count()`, `.mean()`).
+
+## Worked example: Titanic dataset
+- Loaded via seaborn; 891 rows, 15 columns (sex, passenger class, survived, age, etc.).
+- `df.info()` to inspect shape/columns; `df` display to preview rows.
+
+**Overall survival rate (no grouping):**
+`titanic['survived'].describe()` — since `survived` is 0/1, the mean *is* the survival rate (~38%, with high standard deviation, motivating a breakdown by group).
+
+**Count per group (sanity check on group sizes):**
+`titanic.groupby('pclass')['survived'].count()` — most passengers in 3rd class, fewest in 1st. (`value_counts()` gives the same info faster, but this shows the pattern.)
+
+**Survival rate by passenger class:**
+`titanic.groupby('pclass')['survived'].mean()` — clear stratification: 1st class ~63%, 2nd lower, 3rd lowest. Survival tracked with ticket price/class.
+
+## Handling missing values (NaN)
+- By default `groupby` **drops NaN** values in the grouping column (ignores them).
+- To keep them, pass `dropna=False`:
+  `titanic.groupby('embark_town', dropna=False)['survived'].mean()`
+- Example used `embark_town` (where they boarded). Keeping NaN surfaces a survival rate for unrecorded-boarding passengers — sometimes those missing-value groups are worth examining.
+- Dot notation works for the target column too: `.survived.mean()`.
+
+## Key takeaways
+- Use grouping aggregation when you want summary statistics *per group*, not just overall.
+- Grouping variable is almost always categorical.
+- Output is reshaped to one row per group.
+- Watch NaN behavior: dropped by default, recoverable with `dropna=False`.
+- This only scratches the surface of `groupby`.

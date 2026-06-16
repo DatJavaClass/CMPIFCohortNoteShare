@@ -1,0 +1,171 @@
+# Module 7 — Advanced Grouping & Aggregation: Cliff Notes
+
+> Quick-reference for `groupby` / `.agg`. Sections marked ⭐ are the ones I tripped on — read those twice.
+
+---
+
+## 1. The anatomy of a groupby ⭐
+
+```python
+df.groupby("E")["B"].mean()
+#   └───┬────┘ └┬┘  └──┬──┘
+#     split   select  reduce
+```
+
+| Slot | Code | Reads as | My mistake to avoid |
+|------|------|----------|---------------------|
+| **split** | `groupby("E")` | "one bucket per unique value of E" | It takes the **column name**, NOT a value, and NOT a sort. |
+| **select** | `["B"]` | "in each bucket, look at column B" | This is **column selection**, NOT sorting. |
+| **reduce** | `.mean()` | "collapse **each** bucket to a mean" | Always include `()` — `.mean` alone is the uncalled function. |
+
+One-liner to memorize: **split by key → pick the column → collapse each bucket.**
+
+---
+
+## 2. The two killer confusions ⭐
+
+### a) Column NAME vs value INSIDE a column
+`groupby()` always takes the **name of the key column**. You never feed it one specific value.
+
+```python
+df.groupby("A")["B"].mean()   # ✅ "A" is a column → makes a bucket per id
+df.groupby("id1")["B"].mean() # ❌ KeyError: id1 is a VALUE inside column A, not a column
+```
+
+If you only want **one** value (e.g. just `id1`), that's not a groupby — it's a **filter**:
+
+```python
+df[df["A"] == "id1"]["B"].mean()   # one number, just the id1 rows
+```
+
+> **Fork in the road:** `groupby` = "do it for *every* value at once" (many answers). `df[df[col]==val]` = "do it for *one* value" (single answer).
+
+### b) Each bucket sees only its OWN slice — never the "entire" column
+The mean is computed **per bucket**, on that bucket's slice of B — not the whole B column, and not one grand total.
+
+```
+low bucket → B = 10, 12, 7, NaN → mean 9.67
+mid bucket → B = NaN, 9, 15      → mean 12.0   (mid never sees 10 or 7)
+```
+
+If every bucket averaged the *entire* column, every output row would be identical — which would make groupby pointless. The word to burn in is **"each."**
+
+---
+
+## 3. There's an implied loop (split-apply-combine) ⭐
+
+`df.groupby("E")["B"].mean()` is conceptually:
+
+```python
+results = {}
+for key in df["E"].unique():        # SPLIT — the loop you never write
+    bucket = df[df["E"] == key]
+    results[key] = bucket["B"].mean()  # APPLY — reduce this bucket only
+# pandas then COMBINEs results into a Series indexed by the keys
+```
+
+| Phase | What it does |
+|-------|--------------|
+| **Split** | partition rows into buckets by the key |
+| **Apply** | run the function on each bucket's slice |
+| **Combine** | stitch the per-bucket answers into a new object **indexed by the keys** |
+
+You describe the loop declaratively; pandas runs it in fast C. Writing a real `for` loop over groups works but runs 10–100× slower — same logic, wrong altitude.
+
+### Does it sort / concatenate?
+- **Sort:** yes, but only the **group labels** in the *output*, by default. It does NOT reorder your original df, and does NOT sort by the computed values (that's why `low=9.67` sits above `mid=12.0` — sorted by key, not number). Turn it off with `groupby("E", sort=False)`.
+- **"Concatenate":** not quite — it's the **combine** step. It builds a *new* object indexed by the keys (keys → index, reduced values → data). The original rows are gone, replaced by one summary row per group.
+
+---
+
+## 4. `dropna` — the silent row-eater ⭐
+
+`dropna` controls what happens to rows whose **KEY** is missing (e.g. `E = None`).
+
+| Setting | Effect on missing-key rows |
+|---------|----------------------------|
+| `dropna=True` **(the silent default)** | the missing-key group is **deleted entirely** — those rows vanish from the result |
+| `dropna=False` | `NaN` becomes its **own bucket** and gets a row like any other key |
+
+```python
+df.groupby("E")["B"].mean()                # NaN group silently dropped
+df.groupby("E", dropna=True)["B"].mean()   # identical — default made visible
+df.groupby("E", dropna=False)["B"].mean()  # keeps the NaN group
+```
+
+> **The danger is the default direction.** A plain `groupby` can quietly exclude rows and never tell you. Habit: *when a key column might contain NaN, ask whether the default just ate some rows.*
+
+⚠️ Don't confuse the two NaN handlers:
+- `dropna` = missing **keys** (the grouping column).
+- `.mean()` / `.sum()` etc. skip missing **values** (the data column) on their own, regardless of `dropna`.
+
+---
+
+## 5. `size` vs `count` ⭐
+
+| Method | Counts | Cares about the selected column? |
+|--------|--------|----------------------------------|
+| `.size()` | **rows in the group** (NaNs included) | **No** — it's a property of the *group*; `["B"].size()` == `["C"].size()` |
+| `.count()` | **non-NaN values in the chosen column** | **Yes** — point it at another column, get another answer |
+
+```
+low → size  = 4   (rows: 10, 12, 7, NaN)
+low → count = 3   (NaN skipped)
+```
+
+**Handy identity:** `size − count` = number of missing values in that column for the group.
+And: `size` is immune to NaN-skipping because it counts *bodies in the room*, not values.
+
+---
+
+## 6. `.agg()` / `.aggregate()` — build a report in one pass ⭐
+
+Plain `.mean()` = one function on one column. `.agg()` removes that ceiling: **multiple functions on multiple columns, single line.** Functions are passed as **strings** (`'mean'`, `'std'`, `'sem'`, `'nunique'`) — or your own functions.
+
+> Note: `.agg({'B':'mean'})` alone is *deliberately underwhelming* in the notebook — it equals `['B'].mean()`. The power only shows up below.
+
+### Two grammars
+
+**List grammar** — same functions on every selected column (symmetric grid):
+```python
+df.groupby("E")[['B', 'C']].agg(['mean', 'std'])
+# → mean of B, std of B, mean of C, std of C — a 2x2 grid
+```
+
+**Named-aggregation grammar** — different function per column + custom output names (full control):
+```python
+df.groupby("E", dropna=False).aggregate(
+    B_avg=('B', 'mean'),
+    B_sem=('B', 'sem'),
+    B_numrows=('B', 'size'),
+    B_nonmissing=('B', 'count'),
+    A_nunique=('A', 'nunique'),
+).reset_index()
+```
+Pattern: `output_name=('column', 'function')`.
+
+Common functions: `'mean' 'sum' 'min' 'max' 'std' 'median' 'count' 'nunique' 'size' 'sem'`.
+
+---
+
+## 7. Grouping by multiple columns
+
+```python
+df.groupby(["E", "F"], dropna=False)["B"].mean()
+```
+- Makes one bucket per **combination** of E and F values.
+- Returns a **multi-index** (2-level index) Series.
+- This course avoids multi-index → flatten it back to a normal DataFrame with **`.reset_index()`**.
+
+---
+
+## 8. Gotchas I hit on the practice questions ⭐
+
+1. **A Jupyter cell only displays its LAST expression.** If you end a cell with an assignment (`summary = df.groupby(...)`), it shows **nothing** — no error, no table. Fix: put the variable name on its own last line, or use `display(summary)`.
+2. **`groupby(['E', 'G'])` uses the default `dropna=True`** → the `E = None` row is silently dropped. Add `dropna=False` if you need all the data, and `.reset_index()` to dodge the multi-index.
+3. The aggregation *grammar* (`name=('col','func')`) was correct — the traps were display + the silent defaults, not the syntax.
+
+---
+
+### TL;DR
+**split → apply → combine.** `groupby` takes a **column name**; `[]` **selects** a column; each bucket reduces its **own slice**. The default `dropna=True` **silently drops missing-key rows** — use `dropna=False` to keep them. `size` = rows in group; `count` = non-null values. `.agg()` lets you run **many functions × many columns in one line** (list grammar = symmetric, named grammar = per-column control). End cells with the variable or `display()` or you'll see nothing.
