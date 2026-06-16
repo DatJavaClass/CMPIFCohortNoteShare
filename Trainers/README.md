@@ -11,6 +11,7 @@ Where the Cliff Notes and Cliff Jumper Notes follow the course module by module,
 ## Currently available
 
 - `Module-2_Python_Loops_Trainer.pdf` — a focused trainer on Python loops.
+- `Module-4_Statistics_Simulation_Trainer.pdf` — a focused trainer on statistics and simulation.
 
 ## A note of caution
 
