@@ -42,3 +42,6 @@ Does split-apply-combine in one line, no explicit loop needed.
 - Output is reshaped to one row per group.
 - Watch NaN behavior: dropped by default, recoverable with `dropna=False`.
 - This only scratches the surface of `groupby`.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

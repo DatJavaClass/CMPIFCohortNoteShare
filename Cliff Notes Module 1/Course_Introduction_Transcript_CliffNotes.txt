@@ -71,3 +71,6 @@ required. Mix of backgrounds expected.
   - Data science pipeline: the multi-stage process from question
     to communicated insight
   - Jupyter Notebooks: the primary tool environment for this course
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

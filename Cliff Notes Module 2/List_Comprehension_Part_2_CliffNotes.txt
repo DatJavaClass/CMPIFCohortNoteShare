@@ -93,3 +93,6 @@ Worked examples:
   Part 2:  squared_list = [n**2 for n in my_list]
 
 That is the complete content of both lectures.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

@@ -126,3 +126,6 @@ filtering, ":" in the other slot.
 
 Same skeleton every time. Master the two-stage move and the RC slots.
 =====================================================================
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

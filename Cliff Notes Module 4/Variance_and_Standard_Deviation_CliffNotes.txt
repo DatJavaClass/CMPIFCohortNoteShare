@@ -36,3 +36,6 @@ KEY TAKEAWAYS
 - Variance is in squared units; SD restores original units.
 - Divide by n-1 (sample), not n.
 - SD ≈ typical distance from the mean, with outliers weighted more.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

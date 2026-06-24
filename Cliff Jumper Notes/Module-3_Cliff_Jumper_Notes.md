@@ -185,3 +185,7 @@ pseudocode) → **Write** (adapt examples, mostly from the course material) →
 against your example I/O → loop back as needed. When stuck, decompose from what
 you know, refuse the copy-paste shortcut (understand-and-correct is the floor),
 and keep your own notes of what you figure out.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

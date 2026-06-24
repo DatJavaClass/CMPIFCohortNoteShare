@@ -38,3 +38,6 @@ KEY TAKEAWAYS
 - SEM is the SD of the mean, NOT the SD of the data points.
 - A 95% CI ≈ sample mean ± 2*SEM.
 - The real-world point: you rarely have as much data as you want, so being able to communicate uncertainty around an estimate matters.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

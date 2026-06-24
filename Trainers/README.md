@@ -16,3 +16,7 @@ Where the Cliff Notes and Cliff Jumper Notes follow the course module by module,
 ## A note of caution
 
 This is a study aid, not a textbook. Use it to understand and practice, but check anything important against the actual course material, especially before a quiz.
+
+## Contributors
+
+- **Victor Sverdlin (DatJavaClass)**, author and director. Conceived these notes, established their format and structure, directed their creation, and fact-checked, edited, and quality-controlled every one, with assistance by Claude.

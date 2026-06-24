@@ -437,3 +437,7 @@ DataFrame → `.mean(axis=1)` (per-row means, the Module 5 axis rule) →
 `reset_index().rename(...)` for an ID column → an overlaid scatter showing the
 sample means tighten from a ≈0.23–0.75 spread at n=7 to ≈0.47–0.52 at n=500 —
 the standard error shrinking like `1/√n`.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

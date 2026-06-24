@@ -10,7 +10,7 @@ repeat the same ideas, you get one walkthrough that introduces each idea once
 and builds on it. Where it helps, a small amount of extra explanation or
 example is added, but only when it is correct.
 
-There is one note per module (Modules 1 through 7; Module 7 is split into
+There is one note per module (Modules 1 through 8; Module 7 is split into
 parts, with Parts 1 and 2 here).
 
 ## How they are checked: "Who Watches the Watchmen"
@@ -46,9 +46,14 @@ versus concept and advice (checked against the source).
 | 6 | Very High (~97%) | Every code block and number run on pandas 3.0.3; two version-drift fixes (string dtype, Copy-on-Write) verified; a missing plot import and one overreaching claim caught |
 | 7 (Part 1) | High (~94%) | Passed full Diamond QC (independent source and technical audits plus meta-review) |
 | 7 (Part 2) | Very High (~96%) | Every number and code block run on pandas 2.3.3 (groupby/agg/sem, Titanic survival); full Diamond QC found no factual or execution errors; one source slip corrected ("fewest in 1st"→2nd), and the `.sem()` √n basis disambiguated to non-null count |
+| 8 | Very High (~96%) | Every seaborn/pandas/matplotlib call run on seaborn 0.13.2 / matplotlib 3.10.6; numeric reads verified against the data (lifeExp bimodality with modes ~71 and ~46, gdpPercap and diamonds-price right-skew, `year` = 12 uniques, the IQR and 1.5×IQR whisker rule, KDE y-axis = density); `str`/`object` dtype note checked on pandas 3.0.3 and 2.3.3; full Diamond QC, where the meta-auditor caught and fixed a whisker-anatomy claim that contradicted the note's own outlier example |
 
 ## A note of caution
 
 This is still a study aid, not a textbook. Use it to understand and review, but
 check anything important against the actual course material, especially before
 a quiz.
+
+## Contributors
+
+- **Victor Sverdlin (DatJavaClass)**, author and director. Conceived these notes, established their format and structure, directed their creation, and fact-checked, edited, and quality-controlled every one, with assistance by Claude.

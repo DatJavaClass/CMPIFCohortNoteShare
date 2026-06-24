@@ -48,3 +48,6 @@ Early on, prioritize a working solution over an elegant or
 optimal one. Expect disorientation, treat it as a normal phase,
 and lean on the structure ("anchors") the course provides rather
 than expecting to know how to start from nothing.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

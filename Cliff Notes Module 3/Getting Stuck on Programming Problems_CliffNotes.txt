@@ -64,3 +64,6 @@ HIGH-VALUE TAKEAWAYS
     employability) justifies the short-term struggle.
   - Minimum bar even when using AI: be able to understand and
     correct its output, not just paste it.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

@@ -210,3 +210,7 @@ rg.normal(mean, std, shape)          # Gaussian samples
 np.array_equal(A, B)                 # single True/False for two arrays
 np.concatenate([a, b])               # join arrays (add axis= for 2D)
 ```
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

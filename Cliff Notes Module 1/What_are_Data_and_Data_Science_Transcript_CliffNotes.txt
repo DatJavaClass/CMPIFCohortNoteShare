@@ -121,3 +121,6 @@ HIGH-VALUE TAKEAWAYS
     and differs.
   - Always treat data as having a human/instrumentation provenance:
     measurements can be imperfect and subjective.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

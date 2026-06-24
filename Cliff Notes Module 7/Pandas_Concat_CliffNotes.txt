@@ -106,3 +106,6 @@ KEY TAKEAWAYS
 - Horizontal (axis=1) aligns by index; row mismatch fills NaN; watch for duplicate names.
 - .rename(columns={old:new}) is label/string work — order-independent, returns a
   new df, silently ignores unknown keys. It prevents duplicate names rather than fixing existing ones.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

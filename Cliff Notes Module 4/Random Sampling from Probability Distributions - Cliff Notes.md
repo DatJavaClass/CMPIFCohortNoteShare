@@ -24,3 +24,7 @@
 ## Why it matters for this course
 - Running simulations and computing statistics (e.g., **standard error of the mean**) introduces core data science / statistics concepts.
 - Central theme: **quantifying uncertainty** — e.g., how confident we are about what a true average value actually is.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

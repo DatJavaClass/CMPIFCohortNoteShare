@@ -366,3 +366,7 @@ collapse** so per-row means use `axis=1`; build random data from one stateful,
 seeded `default_rng` (matching draws need two same-seeded generators); and the
 capstone SEM simulation fuses a 2D random array, `axis=1` means, and `ddof=1` to
 show SEM shrinking like `1/√n`.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*
