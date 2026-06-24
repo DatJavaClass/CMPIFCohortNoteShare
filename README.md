@@ -8,6 +8,7 @@ These are my auto-generated cliff notes, produced in part with my **CMPIF2100 La
 
 The notes are organized by module:
 
+- `Canyon Notes/` (the entire first half of the semester woven into one deep, illustrated lesson - the deepest tier, big brother to the Cliff Jumper notes)
 - `Cliff Jumper Notes/` (each module's notes woven into one connected lesson)
 - `Cliff Notes Module 1/`
 - `Cliff Notes Module 2/`
