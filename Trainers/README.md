@@ -19,4 +19,4 @@ This is a study aid, not a textbook. Use it to understand and practice, but chec
 
 ## Contributors
 
-- **Victor Sverdlin (DatJavaClass)**, author and director. Conceived these notes, established their format and structure, directed their creation, and fact-checked, edited, and quality-controlled every one, with assistance by Claude.
+- **DatJavaClass (Victor S)**, author and director. Conceived these notes, established their format and structure, directed their creation, and fact-checked, edited, and quality-controlled every one, with assistance by Claude. Some material may have been derived from assigned material, but has not been copied verbatim. For source materials please contact CMPINF-2100 Faculty and Assistants.

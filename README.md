@@ -30,6 +30,6 @@ Also included is **`Sandbox.ipynb`** — an entirely blank-slate Jupyter noteboo
 
 ## Contributors
 
-- **Victor Sverdlin (DatJavaClass)**, author and director. Conceived these notes, established their format and structure, directed their creation, and fact-checked, edited, and quality-controlled every one, with assistance by Claude.
+- **DatJavaClass (Victor S)**, author and director. Conceived these notes, established their format and structure, directed their creation, and fact-checked, edited, and quality-controlled every one, with assistance by Claude. Some material may have been derived from assigned material, but has not been copied verbatim. For source materials please contact CMPINF-2100 Faculty and Assistants.
 
 As Always! You're awesome, Stay awesome! and I wish everyone the best of grades!
