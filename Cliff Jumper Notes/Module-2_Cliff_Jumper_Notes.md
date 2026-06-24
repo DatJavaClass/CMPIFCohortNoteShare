@@ -204,3 +204,7 @@ New operator:  **  is exponentiation  (NOT *, NOT ^)
 ```
 
 That is the complete content of both lectures, in one place.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

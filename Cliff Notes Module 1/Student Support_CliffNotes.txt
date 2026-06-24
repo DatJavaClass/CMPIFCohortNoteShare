@@ -71,3 +71,6 @@ HIGH-VALUE PRACTICAL NOTES
     around routing and tickets, not ad-hoc messaging.
   - Default mental model: peer help on Slack/forums; staff help
     via email; live help via office hours.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

@@ -44,3 +44,6 @@ np.linspace, index and slice like lists. Know ndim (=1), shape (one-element tupl
 and size. The real departure from lists is element-wise behavior: ==, +, and friends
 operate per element, returning arrays; use np.array_equal for a single whole-array
 comparison.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

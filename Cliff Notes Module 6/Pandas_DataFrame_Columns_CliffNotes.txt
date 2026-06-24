@@ -52,3 +52,6 @@ KEY TAKEAWAYS
 - Single column = Series; list of columns = DataFrame.
 - Add via assignment; constant value auto-fills all rows.
 - drop doesn't persist unless you reassign (use .copy()) or pass inplace=True.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

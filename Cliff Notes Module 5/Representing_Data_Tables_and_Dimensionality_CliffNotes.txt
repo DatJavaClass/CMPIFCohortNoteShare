@@ -40,3 +40,6 @@ Tabular data = rows (observations) x columns (attributes). NumPy holds the numer
 core as an ndarray; the two attributes to know are ndim (1D list vs 2D table) and
 shape (rows, columns), with axis 0 = rows and axis 1 = columns. pandas comes later
 for labels and richer functionality.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

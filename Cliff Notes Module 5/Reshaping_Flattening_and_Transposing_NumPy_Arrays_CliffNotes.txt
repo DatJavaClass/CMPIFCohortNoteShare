@@ -71,3 +71,6 @@ columns ([row,col] -> [col,row]). reshape, .T, .ravel, and .squeeze are all READ
 that return new arrays - capture the result. Flatten with .ravel() (always 1D);
 .squeeze() only drops size-1 dimensions and is not a general flattener. All of
 these need a real NumPy array, so box plain lists with np.array() first.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

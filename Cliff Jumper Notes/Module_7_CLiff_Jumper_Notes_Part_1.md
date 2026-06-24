@@ -117,3 +117,7 @@ NaN shows up in every notebook, and the same facts keep paying off:
 ---
 *Part 1 of the Module 7 Cliff Jumper series. Covers: Concat · Summary (Series) ·
 Summary (DataFrame) · Missing Values & EDA. All figures execution-verified under Diamond QC.*
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

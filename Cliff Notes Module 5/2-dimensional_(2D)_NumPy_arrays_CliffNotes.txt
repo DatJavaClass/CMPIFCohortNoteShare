@@ -52,3 +52,6 @@ or from 1D arrays via np.vstack (wrap inputs in a list/tuple; columns must match
 Direct construction with np.zeros / np.ones takes the shape as a tuple. Know ndim
 (2), shape (rows, columns), and size (total cells). Index/slice with
 arr[rows, columns] - row first, column second, and ":" means "all".
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

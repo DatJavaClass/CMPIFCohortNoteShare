@@ -291,3 +291,7 @@ the variable name or `display()`, or you'll stare at nothing.
 (split-apply-combine, the Titanic walkthrough) · Advanced Grouping & Aggregation (`size`/`count`,
 `.agg()` list & named grammars, multi-key grouping, `dropna` control). All figures
 execution-verified on pandas 2.3.3 under Diamond QC.*
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

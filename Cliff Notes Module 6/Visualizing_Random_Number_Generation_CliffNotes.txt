@@ -69,3 +69,6 @@ PANDAS SKILLS REINFORCED
 - .reset_index() + .rename(columns=...) to manufacture an ID column.
 - Column assignment with index alignment.
 - .plot.scatter() and shared-Axes overlays for quick visualization.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

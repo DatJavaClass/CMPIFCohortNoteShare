@@ -88,3 +88,7 @@ estimate of the mean).
 - `ddof=1` gives the unbiased standard deviation.
 - NumPy chains operations into a single efficient line.
 - SEM shrinks as sample size grows.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

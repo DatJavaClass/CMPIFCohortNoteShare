@@ -16,6 +16,7 @@ The notes are organized by module:
 - `Cliff Notes Module 5/`
 - `Cliff Notes Module 6/`
 - `Cliff Notes Module 7/`
+- `Cliff Notes Module 8/`
 
 ## Trainers
 
@@ -26,5 +27,9 @@ Per-subject documents that focus on a single topic in depth, rather than followi
 ## Sandbox
 
 Also included is **`Sandbox.ipynb`** — an entirely blank-slate Jupyter notebook I use as "scratch paper" while working through assignments. Feel free to use it the same way.
+
+## Contributors
+
+- **Victor Sverdlin (DatJavaClass)**, author and director. Conceived these notes, established their format and structure, directed their creation, and fact-checked, edited, and quality-controlled every one, with assistance by Claude.
 
 As Always! You're awesome, Stay awesome! and I wish everyone the best of grades!

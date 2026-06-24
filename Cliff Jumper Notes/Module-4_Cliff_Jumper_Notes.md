@@ -224,3 +224,7 @@ spread the *mean* is and shrinks like `1/√n` (quadruple `n`, halve the SEM); a
 a **95% CI** `≈ x̄ ± 2·SEM` states the uncertainty — correctly read as "95% of
 such intervals would capture the true mean," with bigger `n` giving a tighter,
 more confident interval.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

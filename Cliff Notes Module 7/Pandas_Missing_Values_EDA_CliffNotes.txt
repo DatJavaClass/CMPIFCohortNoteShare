@@ -104,3 +104,6 @@ KEY TAKEAWAYS
 - .describe() = numeric distribution (count/mean/std/min/quartiles/max);
   include='object' = categorical (count/unique/top/freq), top is arbitrary on ties.
 - Few unique values in a numeric column -> consider treating it as categorical.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

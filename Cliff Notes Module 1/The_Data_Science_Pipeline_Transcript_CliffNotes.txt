@@ -113,3 +113,6 @@ HIGH-VALUE TAKEAWAYS FOR EXAM / APPLICATION
     multiple predictor attributes.
   - Communication step is non-optional — analysis that can't be
     explained to a stakeholder hasn't completed the pipeline.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

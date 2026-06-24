@@ -88,3 +88,6 @@ KEY TAKEAWAYS
 - .map() = element-wise on ONE column/index (func/dict/Series); can't see other columns.
 - .apply() = whole row/column at once (func only); use it when logic needs several values.
 - DNF count = df.isna().sum(axis=1) — flag missing, sum across the row.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

@@ -161,3 +161,6 @@ This matters because:
   print(salads)
 
 That is the entire content of the lecture, written out.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

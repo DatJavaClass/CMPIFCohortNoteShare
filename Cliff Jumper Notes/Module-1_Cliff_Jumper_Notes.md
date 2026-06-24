@@ -252,3 +252,7 @@ reads patterns *across columns* (insight) and predicts *unseen rows*
 repeatable process whose center of gravity is the ~80% spent cleaning; and the
 list comprehension — `[action for var in old_list]` — is the Python idiom that
 makes that per-element cleaning work fit on one line.
+
+---
+
+*Authored and directed by **Victor Sverdlin (DatJavaClass)**: conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.*

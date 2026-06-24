@@ -30,3 +30,6 @@ KEY TAKEAWAYS
 - Think of it as several aligned Series.
 - Build it with the pd.DataFrame constructor from lists-of-lists, arrays, etc.
 - Data can be categorical (text/non-numeric) or numeric.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

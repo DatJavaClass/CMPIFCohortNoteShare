@@ -64,3 +64,6 @@ WHY THIS MATTERS FOR THE COURSE
   - His own path validates the program's premise: data science
     skills are picked up by doing, often through adjacent
     research work — not only through formal stats coursework.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

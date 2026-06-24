@@ -51,3 +51,6 @@ KEY TAKEAWAYS
 - OR = | , AND = & , each condition wrapped in ().
 - .isin([...]) beats chained | conditions.
 - .str.contains / .str.startswith for partial string matches.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

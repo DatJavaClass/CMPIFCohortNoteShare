@@ -132,3 +132,6 @@ COMMON TRAPS
 * reset_index() without drop=True shoves the old index in as a column.
 * RangeIndex(start=0, stop=5, step=1) just means labels 0,1,2,3,4.
 * int32 vs int64: dtype can differ by OS/source; both are fine here.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

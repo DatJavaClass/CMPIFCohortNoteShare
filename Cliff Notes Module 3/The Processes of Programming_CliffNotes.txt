@@ -105,3 +105,6 @@ HIGH-VALUE TAKEAWAYS
     (runs, wrong output); testing against example I/O catches
     the latter.
   - Iteration is expected and productive, not a setback.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.

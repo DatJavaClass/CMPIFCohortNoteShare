@@ -169,3 +169,6 @@ df.groupby(["E", "F"], dropna=False)["B"].mean()
 
 ### TL;DR
 **split → apply → combine.** `groupby` takes a **column name**; `[]` **selects** a column; each bucket reduces its **own slice**. The default `dropna=True` **silently drops missing-key rows** — use `dropna=False` to keep them. `size` = rows in group; `count` = non-null values. `.agg()` lets you run **many functions × many columns in one line** (list grammar = symmetric, named grammar = per-column control). End cells with the variable or `display()` or you'll see nothing.
+
+------------------------------------------------------------
+Authored and directed by Victor Sverdlin (DatJavaClass): conceived, structured, formatted, fact-checked, and edited by Victor Sverdlin, with assistance by Claude.
