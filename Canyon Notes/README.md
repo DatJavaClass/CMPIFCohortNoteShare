@@ -15,6 +15,11 @@ Programming in Python, Quantifying Uncertainty, NumPy, pandas, and Visualization
 same handful of ideas (the data table, the list comprehension, the `1/sqrt(n)` law, "axis is the
 direction you collapse," and more) reappear across every module.
 
+> **Heads up on viewing:** GitHub's built-in PDF preview can show strange page duplication on this
+> file (pages appearing twice). That is a quirk of GitHub's in-browser viewer, not the document
+> itself. To read it correctly, click **Download** at the top of the file view, or open the PDF in
+> any reader, where it renders perfectly.
+
 ## How it is checked: the Double Diamond
 
 The Cliff Jumper notes used a single Diamond QC. The Canyon Note uses two diamonds in sequence:
