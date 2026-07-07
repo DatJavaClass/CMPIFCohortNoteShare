@@ -1,6 +1,6 @@
 # Scatter Plots: Continuous-to-Continuous Relationships
 
-**Module 9 Cliff Notes** | Source: lecture transcript "Categorical-to-Continuous Relationships Scatterplots"
+**Module 9 Cliff Notes** | Source: lecture transcript on scatter plots (continuous-to-continuous relationships)
 
 ---
 
@@ -10,7 +10,7 @@
 - Figure-level function: **`sns.relplot`** (default `kind="scatter"`). Axis-level function: **`sns.scatterplot`**.
 - Layer in **categorical** variables with **`hue`** (color), **`col`** (column facets), and **`row`** (row facets) to show three or more variables at once.
 
-> **Source note:** the course files this lecture under the "Categorical-to-Continuous Relationships" series, but scatter plots specifically visualize **continuous-to-continuous** relationships. Categorical variables are layered on top (color, facets), they are not the core of the plot.
+> **Note:** scatter plots specifically visualize **continuous-to-continuous** relationships. Categorical variables are layered on top (color, facets), they are not the core of the plot.
 
 ---
 
