@@ -60,7 +60,7 @@ plt.show()
 
 By default (`inner="box"`) each violin has a little black boxplot down its center. Read it like this:
 
-- **White dot** = the **median**. (The notebook's markdown calls this a "white line," but in current Seaborn the default `inner="box"` renders the median as a white dot inside the black IQR bar; the white *line* form is what `inner="quartile"` uses.)
+- **White line (a short white tick)** = the **median**. (The notebook's markdown calls this the "white line," and that is accurate: in current Seaborn the default `inner="box"` draws the median as a short white horizontal tick, a small white line marker, inside the black IQR bar. Note that `inner="quartile"` does not add a white line; it draws dashed quartile lines, covered below.)
 - **Thick center bar** = the **interquartile range (IQR)**, i.e. the middle **50%** of the data.
 - **Thin lines (whiskers)** = the rest of the distribution.
 
@@ -155,7 +155,7 @@ Exercise 3 is a written prompt (no code): compare the violin plots against a box
 - A violin plot = **KDE (mirrored on both sides)** + an inner **mini boxplot**.
 - Built with **`catplot`** and **`kind="violin"`** (`x` = categorical, `y` = continuous).
 - **Wider** part of the violin = **more data** at that value; **narrower** = less. This exposes **skew** and **multiple peaks**.
-- Inner boxplot (default `inner="box"`): **white dot = median**, **thick center bar = IQR (middle 50%)**, **thin whiskers = the rest**.
+- Inner boxplot (default `inner="box"`): **white line (short white tick) = median**, **thick center bar = IQR (middle 50%)**, **thin whiskers = the rest**.
 - **`inner="quartile"`** replaces the inner box with horizontal lines at the **median, 25th, and 75th percentiles**.
 - Main advantage over a boxplot: it shows the **shape** of the distribution (skew, multimodality), not just the summary numbers.
 - **`aspect=2`** widens the figure; it does not change the statistics.
