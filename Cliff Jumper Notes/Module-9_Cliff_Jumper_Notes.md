@@ -411,7 +411,7 @@ plt.show()
 
 - **A short white horizontal tick = the median.** (The notebook's markdown calls it
   a "white line"; in current seaborn the default `inner="box"` renders the median
-  as a small white tick, a short white line marker, inside the dark-gray IQR bar.
+  as a small white tick, a short white line marker, inside the black IQR bar.
   The `inner="quartile"` form instead draws dashed lines across the violin at the
   25th, 50th, and 75th percentiles.)
 - **Thick center bar = the IQR** (middle 50% of the data).
