@@ -111,7 +111,7 @@ plt.show()
 
 - **`"dark"`**: shaded background, no grid.
 - **`"whitegrid"`**: white background with **grid lines**, handy for reading off exactly where points sit.
-- **`"white"`**: white background, **no** grid lines. Per this notebook, this is the **default** style.
+- **`"white"`**: white background, **no** grid lines. Per this notebook, this is the **default** style. (In wider practice outside of academia, Seaborn's own default via `sns.set_theme()` is actually `darkgrid`, a gray background with grid lines.)
 
 ---
 
