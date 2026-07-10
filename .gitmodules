@@ -1,0 +1,18 @@
+[submodule "Guides/UCFCECS_ALL_PYTHON_LOOPS_INTRO"]
+	path = Guides/UCFCECS_ALL_PYTHON_LOOPS_INTRO
+	url = https://github.com/DatJavaClass/UCFCECS_ALL_PYTHON_LOOPS_INTRO.git
+[submodule "Guides/upitt-anaconda-setup-guide"]
+	path = Guides/upitt-anaconda-setup-guide
+	url = https://github.com/DatJavaClass/upitt-anaconda-setup-guide.git
+[submodule "Guides/CourseraToVSCode"]
+	path = Guides/CourseraToVSCode
+	url = https://github.com/DatJavaClass/CourseraToVSCode.git
+[submodule "Tools/CMPIF2100_LAB_VER_CHECK"]
+	path = Tools/CMPIF2100_LAB_VER_CHECK
+	url = https://github.com/DatJavaClass/CMPIF2100_LAB_VER_CHECK.git
+[submodule "Tools/CMPIF2100-Lab-Transcriber-2.0"]
+	path = Tools/CMPIF2100-Lab-Transcriber-2.0
+	url = https://github.com/DatJavaClass/CMPIF2100-Lab-Transcriber-2.0.git
+[submodule "Tools/VEShell"]
+	path = Tools/VEShell
+	url = https://github.com/DatJavaClass/VEShell.git

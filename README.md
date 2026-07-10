@@ -27,6 +27,25 @@ Per-subject documents that focus on a single topic in depth, rather than followi
 
 - `Trainers/`
 
+## Guides
+
+Standalone walkthroughs and setup guides. Each linked folder is its own repository, gathered here for convenience:
+
+- `Guides/Goodbye AI - On the Road with VS Code.pdf` (going AI-free in VS Code, the follow-up to the Coursera-to-VS-Code guide)
+- [`Guides/UCFCECS_ALL_PYTHON_LOOPS_INTRO/`](https://github.com/DatJavaClass/UCFCECS_ALL_PYTHON_LOOPS_INTRO) (an intro to every kind of Python loop, from the UCF Assisted Learning Center)
+- [`Guides/upitt-anaconda-setup-guide/`](https://github.com/DatJavaClass/upitt-anaconda-setup-guide) (setting up Anaconda for CMPINF-2100 at the University of Pittsburgh)
+- [`Guides/CourseraToVSCode/`](https://github.com/DatJavaClass/CourseraToVSCode) (a guide to using VS Code with Coursera, the prequel to the Goodbye AI guide above)
+
+## Tools
+
+Small utilities I built for the cohort. Each linked folder is its own repository, gathered here for convenience:
+
+- [`Tools/CMPIF2100_LAB_VER_CHECK/`](https://github.com/DatJavaClass/CMPIF2100_LAB_VER_CHECK) (two lines of script that save your sanity checking package versions)
+- [`Tools/CMPIF2100-Lab-Transcriber-2.0/`](https://github.com/DatJavaClass/CMPIF2100-Lab-Transcriber-2.0) (records Windows system audio and transcribes lab sessions live)
+- [`Tools/VEShell/`](https://github.com/DatJavaClass/VEShell) (Very Easy Shell: an Electron + xterm.js + node-pty terminal wrapper)
+
+> **A note on these folders:** the items under `Guides/` and `Tools/` are Git *submodules*, they point to their own repositories so nothing is duplicated here. Browsing on GitHub just works: click a folder and it takes you to that repo. If you `git clone` this repo and want those folders filled in on your machine, add `--recursive` (or run `git submodule update --init --recursive` afterward).
+
 ## Sandbox
 
 Also included is **`Sandbox.ipynb`**, an entirely blank-slate Jupyter notebook I use as "scratch paper" while working through assignments. Feel free to use it the same way.
