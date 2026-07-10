@@ -10,16 +10,16 @@ The notes are organized by module:
 
 - `Canyon Notes/` (the entire first half of the semester woven into one deep, illustrated lesson - the deepest tier, big brother to the Cliff Jumper notes)
 - `Cliff Jumper Notes/` (each module's notes woven into one connected lesson)
-- `Cliff Notes Module 01/`
-- `Cliff Notes Module 02/`
-- `Cliff Notes Module 03/`
-- `Cliff Notes Module 04/`
-- `Cliff Notes Module 05/`
-- `Cliff Notes Module 06/`
-- `Cliff Notes Module 07/`
-- `Cliff Notes Module 08/`
-- `Cliff Notes Module 09/`
-- `Cliff Notes Module 10/`
+- `Cliff Notes Module 01/` (course orientation, what data science is, the data-science pipeline, and list comprehensions (part 1))
+- `Cliff Notes Module 02/` (list comprehensions (part 2))
+- `Cliff Notes Module 03/` (the programming process and mindset: getting unstuck, problem-solving, and practical Python tips)
+- `Cliff Notes Module 04/` (statistics foundations: variance, standard deviation, standard error, confidence intervals, and random sampling)
+- `Cliff Notes Module 05/` (NumPy: 1D and 2D arrays, reshaping and transposing, conditional filtering, summary statistics, and random number generation)
+- `Cliff Notes Module 06/` (pandas basics: Series, DataFrames, selecting columns, and filtering rows)
+- `Cliff Notes Module 07/` (pandas wrangling: grouping and aggregation, concatenation, summarizing Series/DataFrames, and missing-value EDA)
+- `Cliff Notes Module 08/` (visualization foundations: matplotlib and seaborn, bar charts, histograms, boxplots, plotting from pandas, and choosing a plot type)
+- `Cliff Notes Module 09/` (relationship plots: scatterplots and point density, categorical point plots, faceted histograms, conditional KDE, and violin plots)
+- `Cliff Notes Module 10/` (many continuous variables at once: pair plots, correlation coefficients and heat maps, seaborn styles and color palettes, and standardization with scikit-learn)
 
 ## Trainers
 
