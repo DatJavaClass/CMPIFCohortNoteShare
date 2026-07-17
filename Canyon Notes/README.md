@@ -5,7 +5,7 @@
 ## What these are
 
 A Canyon Note is the deepest tier of study note in this repo. A Cliff Note is terse; a Cliff
-Jumper Note weaves one module into a single lesson; a **Canyon Note weaves the entire half-semester
+Jumper Note weaves one module into a single lesson; a **Canyon Note weaves the entire half-semester or project
 into one connected, illustrated lesson** - deeper and layered, enriched with worked examples,
 callouts, sidebars, and real graphs, but never padded.
 
