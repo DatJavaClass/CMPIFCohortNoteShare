@@ -2,6 +2,11 @@
 
 # Canyon Notes
 
+- `CMPIF2100_Part1_Canyon_Notes.pdf` (the entire first half of the semester woven into one deep, illustrated lesson - the deepest tier, big brother to the Cliff Jumper notes)
+- `CMPIF2100_EDAProject_Canyon_Notes.pdf` (A study guide building towards linear regression and logit using past course material that led up to the EDA Project. Validated by the Double Diamond QC)
+- `noteshare_snapshot_2026-07-17.csv` (A bespoke dataset generated from the CMPIFCohortNoteShare itself for use with the EDA Project Canyon Notes.)
+- `CMPIF2100_EDAProject_Canyon_Notes_Bundle.zip` (a single download which contains both the Canyon Notes and the dataset)
+
 ## What these are
 
 A Canyon Note is the deepest tier of study note in this repo. A Cliff Note is terse; a Cliff
