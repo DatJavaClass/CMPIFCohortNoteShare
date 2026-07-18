@@ -13,6 +13,9 @@ Record your computer's audio and turn it into a text transcript, live, on your o
 ## [VEShell](https://github.com/DatJavaClass/VEShell)
 *Very Easy Shell*: a reliable PowerShell terminal with rock-solid mouse and keyboard cut / copy / paste, built on xterm.js (the same engine as VS Code's integrated terminal), so it does not depend on conhost's flaky "Quick Edit" mode. It also bundles two learning tools: **ClaudeWhat** (highlight anything on screen and get a short, context-aware explanation of *that* selection) and **Verbose run** (describe a task in plain language and watch it happen one critical step at a time). An ongoing project, aimed at adding quality-of-life around the shell without losing CLI speed.
 
+## [Linear Regression Simulator](https://www.datjavaclass.com/lrs/)
+See what a line of best fit actually does, before the course formally reaches regression. Upload or paste a CSV (or type X and Y by hand), prune your columns down to the two you want to compare, and watch the scatter with fitted line, residuals, Q-Q plot, and histogram update together. Everything runs in your browser and nothing is uploaded. It is **live and ready to use** at the link above, no install needed. If you would rather keep or read the source, grab `DatJavaClassLRS.zip` in this folder; it ships with a sample dataset and an embedded README.
+
 ---
 
 *About the old transcriber: version 1 (record-only, transcribe-with-a-separate-program) has been retired and archived. Use 2.0 above, it does the whole job in one place.*
