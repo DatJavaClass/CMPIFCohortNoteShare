@@ -25,7 +25,9 @@ The notes are organized by module:
 
 Per-subject documents that focus on a single topic in depth, rather than following the course module by module. See the folder's README for details.
 
-- `Trainers/`
+- `Trainers/Module-2_Python_Loops_Trainer.pdf` (a focused trainer on Python loops)
+- `Trainers/Module-4_Statistics_Simulation_Trainer.pdf` (a focused trainer on statistics and simulation)
+- `Trainers/Module-8-9_Data_Visualization_Toolkit_Trainer_Part_1.pdf` (the matplotlib, pandas, and seaborn functions behind the Module 8-9 plot types; Part 1 of 2)
 
 ## Guides
 
