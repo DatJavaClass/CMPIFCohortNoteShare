@@ -1,0 +1,88 @@
+file_path,file_name,section,module,file_format,size_kb,word_count,line_count,n_commits,days_shared,days_since_update
+.gitattributes,.gitattributes,(root),,none,0.0,,,1,34,34
+.gitignore,.gitignore,(root),,none,0.4,,,10,49,7
+.gitmodules,.gitmodules,(root),,none,0.9,,,1,7,7
+Canyon Notes/CMPIF2100_Part1_Canyon_Notes.pdf,CMPIF2100_Part1_Canyon_Notes.pdf,Canyon Notes,,pdf,3243.4,,,1,23,23
+Canyon Notes/README.md,README.md,Canyon Notes,,md,3.4,515,59,3,23,0
+Cliff Jumper Notes/Module-10_Cliff_Jumper_Notes.md,Module-10_Cliff_Jumper_Notes.md,Cliff Jumper Notes,10,md,20.1,2876,410,1,7,7
+Cliff Jumper Notes/Module-1_Cliff_Jumper_Notes.md,Module-1_Cliff_Jumper_Notes.md,Cliff Jumper Notes,1,md,13.1,2015,259,3,44,23
+Cliff Jumper Notes/Module-2_Cliff_Jumper_Notes.md,Module-2_Cliff_Jumper_Notes.md,Cliff Jumper Notes,2,md,7.7,1276,211,3,44,23
+Cliff Jumper Notes/Module-3_Cliff_Jumper_Notes.md,Module-3_Cliff_Jumper_Notes.md,Cliff Jumper Notes,3,md,9.2,1529,192,3,44,23
+Cliff Jumper Notes/Module-4_Cliff_Jumper_Notes.md,Module-4_Cliff_Jumper_Notes.md,Cliff Jumper Notes,4,md,10.5,1739,231,3,44,23
+Cliff Jumper Notes/Module-5_Cliff_Jumper_Notes.md,Module-5_Cliff_Jumper_Notes.md,Cliff Jumper Notes,5,md,16.8,2662,373,3,44,23
+Cliff Jumper Notes/Module-6_Cliff_Jumper_Notes.md,Module-6_Cliff_Jumper_Notes.md,Cliff Jumper Notes,6,md,19.7,2967,444,3,36,23
+Cliff Jumper Notes/Module-8_Cliff_Jumper_Notes.md,Module-8_Cliff_Jumper_Notes.md,Cliff Jumper Notes,8,md,18.7,2680,454,2,23,23
+Cliff Jumper Notes/Module-9_Cliff_Jumper_Notes.md,Module-9_Cliff_Jumper_Notes.md,Cliff Jumper Notes,9,md,22.5,3188,480,2,8,8
+Cliff Jumper Notes/Module_7_CLiff_Jumper_Notes_Part_1.md,Module_7_CLiff_Jumper_Notes_Part_1.md,Cliff Jumper Notes,7,md,7.4,1124,124,3,32,23
+Cliff Jumper Notes/Module_7_CLiff_Jumper_Notes_Part_2.md,Module_7_CLiff_Jumper_Notes_Part_2.md,Cliff Jumper Notes,7,md,15.4,2404,298,4,31,23
+Cliff Jumper Notes/README.md,README.md,Cliff Jumper Notes,,md,5.6,911,65,10,44,7
+Cliff Notes Module 01/About the Instructor_CliffNotes.txt,About the Instructor_CliffNotes.txt,Cliff Notes,1,txt,3.2,341,70,4,49,7
+Cliff Notes Module 01/Course_Introduction_Transcript_CliffNotes.txt,Course_Introduction_Transcript_CliffNotes.txt,Cliff Notes,1,txt,3.7,432,77,4,49,7
+Cliff Notes Module 01/List_Comprehension_Part_1_CliffNotes.txt,List_Comprehension_Part_1_CliffNotes.txt,Cliff Notes,1,txt,7.0,942,167,4,49,7
+Cliff Notes Module 01/Student Support_CliffNotes.txt,Student Support_CliffNotes.txt,Cliff Notes,1,txt,3.5,392,77,4,49,7
+Cliff Notes Module 01/The_Data_Science_Pipeline_Transcript_CliffNotes.txt,The_Data_Science_Pipeline_Transcript_CliffNotes.txt,Cliff Notes,1,txt,5.3,723,119,4,49,7
+Cliff Notes Module 01/What_are_Data_and_Data_Science_Transcript_CliffNotes.txt,What_are_Data_and_Data_Science_Transcript_CliffNotes.txt,Cliff Notes,1,txt,5.7,714,127,4,49,7
+Cliff Notes Module 02/List_Comprehension_Part_2_CliffNotes.txt,List_Comprehension_Part_2_CliffNotes.txt,Cliff Notes,2,txt,3.7,456,99,4,49,7
+Cliff Notes Module 03/Getting Stuck on Programming Problems_CliffNotes.txt,Getting Stuck on Programming Problems_CliffNotes.txt,Cliff Notes,3,txt,3.5,443,70,4,49,7
+Cliff Notes Module 03/The Processes of Programming_CliffNotes.txt,The Processes of Programming_CliffNotes.txt,Cliff Notes,3,txt,5.1,716,111,4,49,7
+Cliff Notes Module 03/Tips For Python Programming_CliffNotes.txt,Tips For Python Programming_CliffNotes.txt,Cliff Notes,3,txt,2.6,320,54,4,49,7
+Cliff Notes Module 04/Random Sampling from Probability Distributions - Cliff Notes.md,Random Sampling from Probability Distributions - Cliff Notes.md,Cliff Notes,4,md,1.9,299,31,4,49,7
+Cliff Notes Module 04/Standard_Error_Confidence_Intervals_CliffNotes.txt,Standard_Error_Confidence_Intervals_CliffNotes.txt,Cliff Notes,4,txt,2.6,427,44,4,49,7
+Cliff Notes Module 04/Variance_and_Standard_Deviation_CliffNotes.txt,Variance_and_Standard_Deviation_CliffNotes.txt,Cliff Notes,4,txt,2.2,358,42,4,49,7
+Cliff Notes Module 05/1_dimensional_(1D)_NumPy_arrays_CliffNotes.txt,1_dimensional_(1D)_NumPy_arrays_CliffNotes.txt,Cliff Notes,5,txt,2.7,426,50,4,45,7
+Cliff Notes Module 05/2-dimensional_(2D)_NumPy_arrays_CliffNotes.txt,2-dimensional_(2D)_NumPy_arrays_CliffNotes.txt,Cliff Notes,5,txt,3.1,531,58,4,45,7
+Cliff Notes Module 05/Lab_NumPy_2D_arrays_Conditional_filtering_and_summary_statistics.txt,Lab_NumPy_2D_arrays_Conditional_filtering_and_summary_statistics.txt,Cliff Notes,5,txt,5.8,814,132,4,45,7
+Cliff Notes Module 05/Module-5_Random_Number_Generation_with_NumPy_Lab_Cliff_Notes.md,Module-5_Random_Number_Generation_with_NumPy_Lab_Cliff_Notes.md,Cliff Notes,5,md,8.6,1317,217,4,44,7
+Cliff Notes Module 05/Representing_Data_Tables_and_Dimensionality_CliffNotes.txt,Representing_Data_Tables_and_Dimensionality_CliffNotes.txt,Cliff Notes,5,txt,2.6,414,46,4,45,7
+Cliff Notes Module 05/Reshaping_Flattening_and_Transposing_NumPy_Arrays_CliffNotes.txt,Reshaping_Flattening_and_Transposing_NumPy_Arrays_CliffNotes.txt,Cliff Notes,5,txt,4.6,751,77,4,45,7
+Cliff Notes Module 05/numpy_simulation_standard_error_cliffnotes.md,numpy_simulation_standard_error_cliffnotes.md,Cliff Notes,5,md,3.1,471,95,4,44,7
+Cliff Notes Module 06/Filtering_Rows_CliffNotes.txt,Filtering_Rows_CliffNotes.txt,Cliff Notes,6,txt,2.9,409,57,4,36,7
+Cliff Notes Module 06/HW6_Cliff_Notes.txt,HW6_Cliff_Notes.txt,Cliff Notes,6,txt,5.3,757,138,4,36,7
+Cliff Notes Module 06/Pandas_DataFrame_Columns_CliffNotes.txt,Pandas_DataFrame_Columns_CliffNotes.txt,Cliff Notes,6,txt,3.0,457,58,5,39,7
+Cliff Notes Module 06/Pandas_DataFrames_Intro_CliffNotes.txt,Pandas_DataFrames_Intro_CliffNotes.txt,Cliff Notes,6,txt,1.8,271,36,5,39,7
+Cliff Notes Module 06/Pandas_Series_CliffNotes.txt,Pandas_Series_CliffNotes.txt,Cliff Notes,6,txt,2.2,346,45,5,39,7
+Cliff Notes Module 06/Visualizing_Random_Number_Generation_CliffNotes.txt,Visualizing_Random_Number_Generation_CliffNotes.txt,Cliff Notes,6,txt,3.6,492,75,4,36,7
+Cliff Notes Module 07/Module-7_Advanced_Grouping_and_Aggregation Cliff Notes.txt,Module-7_Advanced_Grouping_and_Aggregation Cliff Notes.txt,Cliff Notes,7,txt,8.1,1260,175,4,31,7
+Cliff Notes Module 07/Pandas_Concat_CliffNotes.txt,Pandas_Concat_CliffNotes.txt,Cliff Notes,7,txt,6.8,1078,112,4,32,7
+Cliff Notes Module 07/Pandas_Missing_Values_EDA_CliffNotes.txt,Pandas_Missing_Values_EDA_CliffNotes.txt,Cliff Notes,7,txt,6.3,949,110,4,32,7
+Cliff Notes Module 07/Pandas_Summary_DataFrame_CliffNotes.txt,Pandas_Summary_DataFrame_CliffNotes.txt,Cliff Notes,7,txt,5.6,843,94,4,32,7
+Cliff Notes Module 07/Pandas_Summary_Series_CliffNotes.txt,Pandas_Summary_Series_CliffNotes.txt,Cliff Notes,7,txt,4.9,771,89,4,32,7
+Cliff Notes Module 07/intro_grouping_aggregation.txt,intro_grouping_aggregation.txt,Cliff Notes,7,txt,3.1,428,48,5,31,7
+Cliff Notes Module 08/Bar Charts for One Categorical Variable.md,Bar Charts for One Categorical Variable.md,Cliff Notes,8,md,3.7,512,80,3,23,7
+Cliff Notes Module 08/Categorical-to-Continuous Relationships Boxplots.md,Categorical-to-Continuous Relationships Boxplots.md,Cliff Notes,8,md,4.7,693,74,3,23,7
+Cliff Notes Module 08/Histograms for One Continuous Variable.md,Histograms for One Continuous Variable.md,Cliff Notes,8,md,3.8,528,82,3,23,7
+Cliff Notes Module 08/Introduction to Matplotlib.md,Introduction to Matplotlib.md,Cliff Notes,8,md,3.0,463,77,3,23,7
+Cliff Notes Module 08/Module 8 Cliff Notes.md,Module 8 Cliff Notes.md,Cliff Notes,8,md,2.5,342,57,3,23,7
+Cliff Notes Module 08/Using Pandas to Plot Bar Charts and Histograms.md,Using Pandas to Plot Bar Charts and Histograms.md,Cliff Notes,8,md,3.3,389,80,3,23,7
+Cliff Notes Module 08/What Plot Type Should You Use.md,What Plot Type Should You Use.md,Cliff Notes,8,md,3.5,513,74,3,23,7
+Cliff Notes Module 09/Categorical-to-Continuous Relationships - Point Plots (Cliff Notes).md,Categorical-to-Continuous Relationships - Point Plots (Cliff Notes).md,Cliff Notes,9,md,7.2,1142,149,2,10,7
+Cliff Notes Module 09/Continuous-to-Continuous Relationships - Scatterplots (Cliff Notes).md,Continuous-to-Continuous Relationships - Scatterplots (Cliff Notes).md,Cliff Notes,9,md,6.0,842,119,3,10,7
+Cliff Notes Module 09/Faceted Histograms and Conditional KDE (Cliff Notes).md,Faceted Histograms and Conditional KDE (Cliff Notes).md,Cliff Notes,9,md,7.2,1018,144,2,10,7
+Cliff Notes Module 09/Point Plots - Notebook (Cliff Notes).md,Point Plots - Notebook (Cliff Notes).md,Cliff Notes,9,md,6.5,921,144,2,10,7
+Cliff Notes Module 09/Scatterplot Density Visualization - Notebook (Cliff Notes).md,Scatterplot Density Visualization - Notebook (Cliff Notes).md,Cliff Notes,9,md,6.7,910,146,2,8,7
+Cliff Notes Module 09/Scatterplots - Notebook (Cliff Notes).md,Scatterplots - Notebook (Cliff Notes).md,Cliff Notes,9,md,3.4,405,100,2,10,7
+Cliff Notes Module 09/Violin Plots (Cliff Notes).md,Violin Plots (Cliff Notes).md,Cliff Notes,9,md,7.6,1121,168,3,10,7
+Cliff Notes Module 10/Continuous-to-Continuous Relationships - Correlation Plots (Cliff Notes).md,Continuous-to-Continuous Relationships - Correlation Plots (Cliff Notes).md,Cliff Notes,10,md,8.6,1254,164,1,7,7
+Cliff Notes Module 10/Correlation Plots - Notebook (Cliff Notes).md,Correlation Plots - Notebook (Cliff Notes).md,Cliff Notes,10,md,6.0,796,120,1,7,7
+Cliff Notes Module 10/Introduction to Standardization (Cliff Notes).md,Introduction to Standardization (Cliff Notes).md,Cliff Notes,10,md,7.3,1071,115,1,7,7
+Cliff Notes Module 10/Introduction to Standardization - Notebook (Cliff Notes).md,Introduction to Standardization - Notebook (Cliff Notes).md,Cliff Notes,10,md,5.0,744,82,1,7,7
+Cliff Notes Module 10/Pairplots - Notebook (Cliff Notes).md,Pairplots - Notebook (Cliff Notes).md,Cliff Notes,10,md,5.3,725,117,1,7,7
+Cliff Notes Module 10/Standardization with Scikit-learn (Cliff Notes).md,Standardization with Scikit-learn (Cliff Notes).md,Cliff Notes,10,md,9.5,1301,196,1,7,7
+Cliff Notes Module 10/Standardization with Scikit-learn - Notebook (Cliff Notes).md,Standardization with Scikit-learn - Notebook (Cliff Notes).md,Cliff Notes,10,md,8.3,1132,119,1,7,7
+Cliff Notes Module 10/Styles and Color Palettes - Notebook (Cliff Notes).md,Styles and Color Palettes - Notebook (Cliff Notes).md,Cliff Notes,10,md,5.8,742,134,2,7,7
+Guides/CourseraToVSCode,CourseraToVSCode,Guides,,submodule,,,,1,7,7
+Guides/Goodbye AI - On the Road with VS Code.pdf,Goodbye AI - On the Road with VS Code.pdf,Guides,,pdf,1020.3,,,1,7,7
+Guides/README.md,README.md,Guides,,md,2.6,375,26,1,7,7
+Guides/UCFCECS_ALL_PYTHON_LOOPS_INTRO,UCFCECS_ALL_PYTHON_LOOPS_INTRO,Guides,,submodule,,,,1,7,7
+Guides/upitt-anaconda-setup-guide,upitt-anaconda-setup-guide,Guides,,submodule,,,,1,7,7
+LICENSE,LICENSE,(root),,none,1.1,,,1,49,49
+README.md,README.md,(root),,md,4.7,624,58,19,49,7
+Sandbox.ipynb,Sandbox.ipynb,(root),,ipynb,0.3,,,1,49,49
+Tools/CMPIF2100-Lab-Transcriber-2.0,CMPIF2100-Lab-Transcriber-2.0,Tools,,submodule,,,,1,7,7
+Tools/CMPIF2100_LAB_VER_CHECK,CMPIF2100_LAB_VER_CHECK,Tools,,submodule,,,,1,7,7
+Tools/README.md,README.md,Tools,,md,2.5,363,21,1,7,7
+Tools/VEShell,VEShell,Tools,,submodule,,,,1,7,7
+Trainers/Module-2_Python_Loops_Trainer.pdf,Module-2_Python_Loops_Trainer.pdf,Trainers,2,pdf,32.7,,,1,34,34
+Trainers/Module-4_Statistics_Simulation_Trainer.pdf,Module-4_Statistics_Simulation_Trainer.pdf,Trainers,4,pdf,30.9,,,1,32,32
+Trainers/Module-8-9_Data_Visualization_Toolkit_Trainer_Part_1.pdf,Module-8-9_Data_Visualization_Toolkit_Trainer_Part_1.pdf,Trainers,8,pdf,420.1,,,1,8,8
+Trainers/README.md,README.md,Trainers,,md,1.6,232,24,6,34,8
