@@ -20,6 +20,7 @@ The notes are organized by module:
 - `Cliff Notes Module 08/` (visualization foundations: matplotlib and seaborn, bar charts, histograms, boxplots, plotting from pandas, and choosing a plot type)
 - `Cliff Notes Module 09/` (relationship plots: scatterplots and point density, categorical point plots, faceted histograms, conditional KDE, and violin plots)
 - `Cliff Notes Module 10/` (many continuous variables at once: pair plots, correlation coefficients and heat maps, seaborn styles and color palettes, and standardization with scikit-learn)
+- `Cliff Notes Module 11/` (predictive analytics and linear regression: the goal of predictive modeling, models and regression vs classification, the linear regression formula and its coefficients, a river-depth code example, and the model's four assumptions)
 
 ## Trainers
 
