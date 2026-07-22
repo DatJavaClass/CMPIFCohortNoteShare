@@ -576,4 +576,44 @@ and dodging the patsy landmine that `'y ~ x**2'` collapses to `'y ~ x'` (R-squar
 
 ---
 
+## Errata: the recovered lab recording
+
+After this weave shipped, the transcript of the **recorded lab session** behind
+section 5's interaction notebook surfaced (it had been left out of the module by
+a save-directory error). Its cliff note now sits in the module folder as
+**"Interaction Features for Linear Regression (Cliff Notes)"**, the spoken
+companion to the notebook note. Nothing in sections 1 through 7 changes: the
+recording narrates the same lab, and every number in the material it narrates
+was re-verified against the same 150-row CSV (the section 5 coefficients, the
+identity of the three formula spellings, and all four p-values reproduce
+exactly). What follows is what the recording adds or corrects.
+
+- **The module's cliff-note count is now eight, not seven.** The intro
+  describes this weave as stitched from "seven Module 13 cliff notes: one
+  lecture note ... and six lab notebook notes," which is still true of what
+  was stitched. With the recovered recording the module folder now holds
+  **eight** cliff notes: two spoken-source notes (the categorical lecture and
+  the interaction lab session) plus the six notebook notes.
+- **The formula mini-language is R's, on the record.** The instructor states
+  that the statsmodels formula interface is "drawn from the R programming
+  language." That is why `+`, `:`, `*`, and `**` follow R's formula conventions
+  instead of Python arithmetic, and it is the same R-heritage operator behind
+  section 7's landmine, where `'y ~ x**2'` collapses to `'y ~ x'` because
+  formula `**` means interaction expansion, not exponentiation.
+- **The apartment data is synthetic.** The instructor says so in passing while
+  reading the fitted parameters. The header's dataset roster can be read
+  accordingly: the apartment prices CSV is synthetic like the seed-2100 additive
+  data, which is likely why its interaction shows up so cleanly. Same file,
+  same URL, so no verified number moves.
+- **Spoken guidance now on record** (matching section 5 as written): you usually
+  do not want the interaction term alone, you keep the **main effects** and add
+  the interaction on top; `a * b` is the everyday shortcut people actually use;
+  and `**n` earns its keep only at three or more variables, where it caps the
+  expansion at degree n (pairwise for `**2`) so you are not stuck interpreting
+  three-way and four-way interactions. The section-5 warm-up intuitions (cold rain feeling
+  "doubly terrible," viral exposure biting harder when immunocompromised) are
+  also the instructor's own spoken examples in this recording.
+
+---
+
 *Authored and directed by **DatJavaClass (Victor S)**, who conceived, structured, formatted, fact-checked, and edited these notes, with assistance by Claude. Some material may have been derived from assigned material, but has not been copied verbatim. For source materials please contact CMPINF-2100 Faculty and Assistants.*
