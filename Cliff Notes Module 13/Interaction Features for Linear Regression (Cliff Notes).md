@@ -6,7 +6,7 @@
 
 ## TL;DR
 
-- An additive model just **adds** each feature's effect (coefficient times value, summed). An **interaction feature** instead **multiplies the variables together**, so the model can capture "when this feature has a value AND that feature has a value, something extra happens to the output."
+- An additive model just **adds** each feature's effect (coefficient times value, summed). An **interaction feature** instead **multiplies the variables together**, so the model can capture *when this feature has a value AND that feature has a value, something extra happens to the output*.
 - The core sentence of the session: **how one variable relates to the output can depend on the value of another variable.** When that is true, addition alone is not enough.
 - Two warm-up intuitions: cold is uncomfortable and rain is uncomfortable, but cold rain together is "doubly terrible" (more than the sum); and the amount of respiratory virus someone is exposed to predicts sickness, but that relationship is much sharper if the person is immunocompromised.
 - The lab predicts apartment **price** from **size in square meters** (continuous) and **city center or not** (Boolean), on a 150-row dataset pulled from a URL. The instructor notes in passing that this is **synthetic data**.
@@ -47,7 +47,7 @@ data_url = 'https://raw.githubusercontent.com/michaelmilleryoder/cmpinf2100/refs
 data = pd.read_csv(data_url)
 ```
 
-The data is pulled in from a URL: **150 rows** (Verified), with `size_m2` (continuous size in square meters), `city_center` (Boolean), and `price_usd` (the target). A quick look at the head shows a mix of city-center and non-city-center rows across a range of sizes and prices. The instructor mentions offhand that **this is synthetic data**, which is worth knowing: the effects are clean because they were built in.
+The data is pulled in from a URL: **150 rows** (Verified), with `size_m2` (continuous size in square meters), `city_center` (Boolean), and `price_usd` (the target). A quick look at the head shows a mix of city-center and non-city-center rows across a range of sizes and prices. The instructor mentions offhand that **this is synthetic data**, which is worth knowing: the effects are clean, presumably because they were built in.
 
 ## Way 1: spell it out with a colon (`a:b`), and keep the main effects
 
@@ -105,7 +105,7 @@ Exact same model, exact same coefficients, exact same extracted features (Verifi
 So what is the point of `**2`? **Capping the interaction order.** With only two variables it changes nothing, but with three or more variables:
 
 - Chaining stars (`a * b * c * ...`) gives **all possible interactions** among the variables, including three-way, four-way if you had four variables, and so on.
-- `(a + b + c)**2` means "**only up to two-way (pairwise) interactions**": all main effects, all pairs, no `a:b:c`.
+- `(a + b + c)**2` means **only up to two-way (pairwise) interactions**: all main effects, all pairs, no `a:b:c`.
 - Three-way and higher interactions get tricky to interpret, so often you want just the pairwise ones. You can cap at up to two or up to three with `**2` or `**3`.
 
 ## Significance check
@@ -131,7 +131,7 @@ model.pvalues
 - **The formula mini-language comes from R**, which is why `*`, `:`, and `**` do not mean what they mean in ordinary Python.
 - **Boolean categorical inputs**: reference category is `False`, terms print as `[T.True]`, and coefficients are read relative to the `False` baseline.
 - **Verified fit** (`price_usd ~ size_m2 * city_center`, 150 synthetic rows): Intercept 31586.41, city_center[T.True] 92869.53, size_m2 2996.99, interaction 870.57; **all p-values < 0.05** (interaction about 0.0064).
-- **The apartment data is synthetic** (instructor's aside), which is why the built-in interaction shows up so cleanly.
+- **The apartment data is synthetic** (instructor's aside), which is likely why the interaction shows up so cleanly.
 
 ---
 
