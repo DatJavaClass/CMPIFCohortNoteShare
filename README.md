@@ -22,6 +22,7 @@ The notes are organized by module:
 - `Cliff Notes Module 10/` (many continuous variables at once: pair plots, correlation coefficients and heat maps, seaborn styles and color palettes, and standardization with scikit-learn)
 - `Cliff Notes Module 11/` (predictive analytics and linear regression: the goal of predictive modeling, models and regression vs classification, the linear regression formula and its coefficients, a river-depth code example, and the model's four assumptions)
 - `Cliff Notes Module 12/` (linear regression with statsmodels: fitting OLS models with the formula API, reading the summary table, p-values and confidence intervals on coefficient estimates, predicting over an input grid, and confidence vs prediction intervals on those predictions)
+- `Cliff Notes Module 13/` (richer inputs for linear regression: additive multi-predictor models, standardizing variables so coefficients compare fairly, categorical inputs via dummy coding and reference categories, interaction features and their prediction visualizations, and nonlinear feature transformations, all still linear in the coefficients)
 
 ## Trainers
 
