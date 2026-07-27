@@ -23,6 +23,7 @@ The notes are organized by module:
 - `Cliff Notes Module 11/` (predictive analytics and linear regression: the goal of predictive modeling, models and regression vs classification, the linear regression formula and its coefficients, a river-depth code example, and the model's four assumptions)
 - `Cliff Notes Module 12/` (linear regression with statsmodels: fitting OLS models with the formula API, reading the summary table, p-values and confidence intervals on coefficient estimates, predicting over an input grid, and confidence vs prediction intervals on those predictions)
 - `Cliff Notes Module 13/` (richer inputs for linear regression: additive multi-predictor models, standardizing variables so coefficients compare fairly, categorical inputs via dummy coding and reference categories, interaction features and their prediction visualizations, and nonlinear feature transformations, all still linear in the coefficients)
+- `Cliff Notes Module 14/` (honest model evaluation: residuals and R-squared, root mean squared error, comparing models on training scores and why that rewards complexity, k-fold cross-validation, the patsy design-matrix bridge to scikit-learn, choosing the simplest model within one standard error, and pipelines that keep preprocessing inside the folds)
 
 ## Trainers
 
