@@ -3,6 +3,7 @@
 # Canyon Notes
 
 - `CMPIF2100_Part1_Canyon_Notes.pdf` (the entire first half of the semester woven into one deep, illustrated lesson - the deepest tier, big brother to the Cliff Jumper notes)
+- `CMPIF2100_Part2_Canyon_Notes.pdf` (the entire second half of the semester woven into one deep, illustrated lesson - Part 1's sibling and sequel, from seeing relationships all the way to honestly judging models)
 - `CMPIF2100_EDAProject_Canyon_Notes.pdf` (A study guide building towards linear regression and logit using past course material that led up to the EDA Project. Validated by the Double Diamond QC)
 - `noteshare_snapshot_2026-07-17.csv` (A bespoke dataset generated from the CMPIFCohortNoteShare itself for use with the EDA Project Canyon Notes.)
 - `CMPIF2100_EDAProject_Canyon_Notes_Bundle.zip` (a single download which contains both the Canyon Notes and the dataset)
@@ -20,8 +21,17 @@ Programming in Python, Quantifying Uncertainty, NumPy, pandas, and Visualization
 same handful of ideas (the data table, the list comprehension, the `1/sqrt(n)` law, "axis is the
 direction you collapse," and more) reappear across every module.
 
-> **Heads up on viewing:** GitHub's built-in PDF preview can show strange page duplication on this
-> file (pages appearing twice). That is a quirk of GitHub's in-browser viewer, not the document
+**`CMPIF2100_Part2_Canyon_Notes.pdf`** covers **Modules 9 through 14** (Relationship Plots, Many
+Variables at Once, Predictive Analytics and Linear Regression, Regression in Practice with
+statsmodels, Richer Inputs, and Honest Model Evaluation with Cross-Validation) in a single 41-page
+document. It rests on a locked spine of **162 verified claims**, carries **21 exam-safety notes**
+and **22 trap callouts**, and its six parts are tied together by ten through-line threads (the
+residual as the atom of error, the ddof landmine, "linear means linear in the coefficients,"
+"names that lie," and more). Every graph was generated and accessibility-checked by our own code;
+nothing was copied from course material.
+
+> **Heads up on viewing:** GitHub's built-in PDF preview can show strange page duplication on these
+> files (pages appearing twice). That is a quirk of GitHub's in-browser viewer, not the document
 > itself. To read it correctly, click **Download** at the top of the file view, or open the PDF in
 > any reader, where it renders perfectly.
 
@@ -47,6 +57,11 @@ all twelve graphs) was run on the standard Anaconda stack; the conceptual materi
 source and adversarially reviewed. Four "answer the course's way" notes flag places where the course
 states something the loose way (the undefined-variable error class, the confidence-interval reading,
 the text-column dtype, and an array-repr quirk).
+
+Part 2 went through the full Double Diamond plus a three-lens release gate (truth and regression,
+clarity and seams, presentation and legibility) and an independent final sign-off, which put the
+confidence of no material error at roughly 97 percent. Its 21 "answer the course's way" notes are
+gathered on the document's closing page so they can be reviewed in one place before a quiz.
 
 ## A note of caution
 
