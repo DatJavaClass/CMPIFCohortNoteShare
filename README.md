@@ -1,4 +1,5 @@
-<p align="center"><img width="651" height="968" alt="ChatGPT Image Jun 11, 2026, 12_49_40 PM" src="https://github.com/user-attachments/assets/99da5453-5993-4993-8aac-51c0a4b6510c" /></p>
+<p align="center"><img width="1774" height="887" alt="ChatGPT Image Jul 27, 2026, 08_30_51 PM" src="https://github.com/user-attachments/assets/795e8fbb-68af-47c9-99a0-365b91b742a6" /></p>
+
 
 # CMPIF2100: Cliff Notes & Sandbox
 
