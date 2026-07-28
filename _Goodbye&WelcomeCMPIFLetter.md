@@ -24,4 +24,4 @@ I wish you the best of luck, and to paraphrase an old anime, like the cinephile 
 
 -Vic Sverdlin
 
-<p align="center"><img width="912" height="1161" alt="Gemini_Generated_Image_zgkg0dzgkg0dzgkg" src="https://github.com/user-attachments/assets/2dcddcb1-621c-49fd-843b-733170ab11b4" /></p>
+
