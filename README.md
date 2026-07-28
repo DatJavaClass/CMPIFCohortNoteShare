@@ -5,6 +5,8 @@
 
 These are my auto-generated cliff notes, produced in part with my **CMPIF2100 Lab Transcriber**. As per the permission given during the **5/28 study hall**, I'm sharing them with the rest of the cohort. I'll do my best to keep this repo updated.
 
+[A letter from the note taker](_Goodbye%26WelcomeCMPIFLetter.md)
+
 ## Cliff Notes
 
 The notes are organized by module:
