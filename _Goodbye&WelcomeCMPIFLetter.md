@@ -1,10 +1,12 @@
+# Goodbye & Welcome
+
 The Summer 2026 Cohort of CMPIF 2100 has been a pleasure. Dr. Alawami and her TA Team: Dahnush Binu, Surya Tej Boddu, Kasvitha Kalapati, and Nanman Gupta.
 
 If you're as lucky as I am to have this team during your cohort, I urge you to take advantage. Go to the open office hours. Ask the questions, get to know them. They are genuinely there to help.
 
 Once you've gotten comfortable with the Slack software? Engage with your peers. Don't just react, act. Start topics, cause chaos, move fast, break things, build them back stronger. Most of all?
 
-Organize a Study Group. I organized one that met weekly during my time in the program. Every Thursday, and you know what? Even people who came rarely or erratically ended up having higher grades than those who didn't come at all. People who came ended up being more plugged into the pulse of the course because I made it my mission to stay plugged in for them and even get them lists of free stuff.
+**Organize a Study Group.** I organized one that met weekly during my time in the program. Every Thursday, and you know what? Even people who came rarely or erratically ended up having higher grades than those who didn't come at all. People who came ended up being more plugged into the pulse of the course because I made it my mission to stay plugged in for them and even get them lists of free stuff.
 
 But that was me. This is you. You're starting something big. Something that could be life changing. Something daunting, and if you're not even a little bit daunted? You're going into this with the wrong attitude.
 
@@ -12,10 +14,12 @@ This is not an easy course. It is not overly challenging, but it is certainly no
 
 I've rambled on enough. You've taken the right first steps to the next big bang in your career/life/sandwich. Even if you don't get Dr. Alawami and her team you'll get some rockstars (seriously, hope for Dr. Alawami and her team) who will be there to support you.
 
-And let's not forget your peers. That's the point of a study group! It was the point of mine and I'm paying it forward with this repository of Cliff Notes, Cliff Jumper Notes (Module Sized Narrative Notes), Canyon Notes (Half Semester Length Narrative Notes), Tools, Guides, and subject Trainers that are all allowed to be used and are there to make your life easier. Please, use them!
-(And drop the repo a star while you're at it :P )
+And let's not forget your peers. That's the point of a study group! It was the point of mine and I'm paying it forward with this repository of **Cliff Notes**, **Cliff Jumper Notes** (Module Sized Narrative Notes), **Canyon Notes** (Half Semester Length Narrative Notes), **Tools**, **Guides**, and subject **Trainers** that are all allowed to be used and are there to make your life easier. Please, use them!
+
+*(And drop the repo a star while you're at it :P )*
 
 I wish you the best of luck, and to paraphrase an old anime, like the cinephile I am...
 
-See you in the datasets, cowboy!
+**See you in the datasets, cowboy!**
+
 -Vic Sverdlin
