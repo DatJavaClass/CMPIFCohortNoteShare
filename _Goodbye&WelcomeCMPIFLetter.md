@@ -1,6 +1,6 @@
 # Goodbye & Welcome
 
-The Summer 2026 Cohort of CMPIF 2100 has been a pleasure. Dr. Alawami and her TA Team: Dahnush Binu, Surya Tej Boddu, Kasvitha Kalapati, and Nanman Gupta.
+The Summer 2026 Cohort of CMPIF 2100 has been a pleasure. Dr. Alawami and her TA Team: Surya Tej Boddu, Dahnush Binu, Kasvitha Kalapati, and Nanman Gupta.
 
 If you're as lucky as I am to have this team during your cohort, I urge you to take advantage. Go to the open office hours. Ask the questions, get to know them. They are genuinely there to help.
 
@@ -12,7 +12,7 @@ But that was me. This is you. You're starting something big. Something that coul
 
 This is not an easy course. It is not overly challenging, but it is certainly not easy. It will require roughly 20 hours of commitment a week. That's beyond the study group. That's the minimum. It's going to require you to learn to lean on your understanding, not on the gestalt knowledge of an LLM.
 
-I've rambled on enough. You've taken the right first steps to the next big bang in your career/life/sandwich. Even if you don't get Dr. Alawami and her team you'll get some rockstars (seriously, hope for Dr. Alawami and her team) who will be there to support you.
+I've rambled on enough. You've taken the right first steps to the next big bang in your career/life/sandwich. Even if you don't get Dr. Alawami and her team you'll get some rockstars (seriously, hope you do get Dr. Alawami and her team! You'll be very happy!) who will be there to support you.
 
 And let's not forget your peers. That's the point of a study group! It was the point of mine and I'm paying it forward with this repository of **Cliff Notes**, **Cliff Jumper Notes** (Module Sized Narrative Notes), **Canyon Notes** (Half Semester Length Narrative Notes), **Tools**, **Guides**, and subject **Trainers** that are all allowed to be used and are there to make your life easier. Please, use them!
 
